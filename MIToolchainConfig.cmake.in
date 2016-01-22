@@ -1,0 +1,21 @@
+# ==============================================================================
+# Include directories to add to the user project:
+# ==============================================================================
+
+# Provide the include directories to the caller
+SET(MIToolchain_INCLUDE_DIRS @CMAKE_INCLUDE_DIRS_CONFIGCMAKE@)
+
+INCLUDE_DIRECTORIES(${MIToolchain_INCLUDE_DIRS})
+
+# ==============================================================================
+# Link directories to add to the user project:
+# ==============================================================================
+
+# Provide the libs directory anyway, it may be needed in some cases.
+SET(MIToolchain_LIB_DIR @CMAKE_LIB_DIRS_CONFIGCMAKE@)
+
+LINK_DIRECTORIES(${MIToolchain_LIB_DIR})
+
+# ==============================================================================
+# Link libraries: core
+SET(MIToolchain_LIBRARIES ${Boost_LIBRARIES} system_utils logger configuration application)
