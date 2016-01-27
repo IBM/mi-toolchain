@@ -102,10 +102,10 @@ void ParameterServer::parseApplicationParameters(int argc, char* argv[]) {
 	// Declare the supported command-line options
 	po::options_description desc("Allowed options");
 	desc.add_options()
-		("help,H", "Display help message")
-		("load-config,C", po::value<std::string>(&existing_config_name)->default_value(default_config_name.c_str()), "Choose configuration JSON file")
-		("create-config,D", "Create default configuration JSON file")
-		("logger-level,L", po::value<int>(&log_lvl)->default_value(3), "Set logger severity level")
+		("help,h", "Display (h)elp message")
+		("load-config,l", po::value<std::string>(&existing_config_name)->default_value(default_config_name.c_str()), "(L)oad configuration from given JSON file")
+		("create-config,c", "(C)reate default configuration JSON file")
+		("set-logger-level,s", po::value<int>(&log_lvl)->default_value(3), "(S)et logger severity level")
 	;
 
 	// Variables map.

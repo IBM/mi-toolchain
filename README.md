@@ -24,6 +24,9 @@ Main modules
    * logger - classess and functions related to logger 
    * system_utils - timers etc. (depricated)
 
+Applications
+------------
+   * logger_test application for testing console logger
 
 Maintainer
 ----------

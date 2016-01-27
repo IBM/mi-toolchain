@@ -4,16 +4,13 @@ include(CheckCXXCompilerFlag)
 # Include current dir
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+
 # =======================================================================
-# Find Boost package
+# Add CMAKE variables.
 # =======================================================================
-find_package(Boost 1.58 REQUIRED COMPONENTS system thread random program_options regex date_time)
 
-# Try to include Boost as system directory to suppress it's warnings
-include_directories(SYSTEM ${Boost_INCLUDE_DIR})
-
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
-
+set(BUILD_TEST_LOGGER ON CACHE BOOL "Build the application for testing logger")
 
 
 # =======================================================================
@@ -71,13 +68,23 @@ target_link_libraries(application ${Boost_LIBRARIES} logger configuration)
 # =======================================================================
 
 install(TARGETS system_utils logger configuration application LIBRARY DESTINATION lib)
-#install(TARGETS  LIBRARY DESTINATION lib)
-#install(TARGETS configuration LIBRARY DESTINATION lib)
-#install(TARGETS application LIBRARY DESTINATION lib)
-
 
 
 # =======================================================================
-# Create variable containing all CORE libraries.
+# Build and install - logger test application.
 # =======================================================================
-#SET(MIToolchain_LIBRARIES ${Boost_LIBRARIES} system_utils logger configuration application)
+
+if(${BUILD_TEST_LOGGER})
+	# Create exeutable.
+	ADD_EXECUTABLE(logger_test tests/logger_test.cpp)
+	# Link it with shared libraries.
+	target_link_libraries(logger_test 
+		configuration
+		logger
+		${Boost_LIBRARIES}
+		)
+
+	# install test to bin directory
+	install(TARGETS logger_test RUNTIME DESTINATION bin)
+
+endif(${BUILD_TEST_LOGGER})
