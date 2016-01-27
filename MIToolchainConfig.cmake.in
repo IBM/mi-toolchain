@@ -17,5 +17,13 @@ SET(MIToolchain_LIB_DIR @CMAKE_LIB_DIRS_CONFIGCMAKE@)
 LINK_DIRECTORIES(${MIToolchain_LIB_DIR})
 
 # ==============================================================================
-# Link libraries: core
-SET(MIToolchain_LIBRARIES ${Boost_LIBRARIES} system_utils logger configuration application)
+# Create list with absolute libraries paths.
+#SET(MIToolchain_COMPONENTS system_utils logger configuration application)
+#message(" MIToolchain_COMPONENTS = ${MIToolchain_COMPONENTS}")
+#set(MIToolchain_LIBRARIES "")
+#foreach( COMPONENT  ${MIToolchain_COMPONENTS} )
+#  	  message("@CMAKE_LIB_DIRS_CONFIGCMAKE@/lib${COMPONENT}.dylib")
+#      list(APPEND MIToolchain_LIBRARIES @CMAKE_LIB_DIRS_CONFIGCMAKE@/lib${COMPONENT}.dylib )
+#endforeach()
+
+SET(MIToolchain_LIBRARIES system_utils logger configuration application)

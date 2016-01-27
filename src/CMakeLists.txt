@@ -67,6 +67,8 @@ target_link_libraries(application ${Boost_LIBRARIES} logger configuration)
 
 
 # =======================================================================
+# Install target libraries.
+# =======================================================================
 
 install(TARGETS system_utils logger configuration application LIBRARY DESTINATION lib)
 #install(TARGETS  LIBRARY DESTINATION lib)
