@@ -27,7 +27,7 @@ include_directories(SYSTEM ${Boost_INCLUDE_DIR})
 # use, i.e. don't skip the full RPATH for the build tree
 SET(CMAKE_SKIP_BUILD_RPATH  FALSE)
 
-# when building, don't use the install RPATH already
+# when building, use the install RPATH already
 # (but later on when installing)
 SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE) 
 

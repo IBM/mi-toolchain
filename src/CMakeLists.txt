@@ -4,7 +4,14 @@ include(CheckCXXCompilerFlag)
 # Include current dir
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+# =======================================================================
+# Set compiler/linker flags.
+# =======================================================================
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+
+# Check, whether all necessary libraries are linked
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl") 
 
 # =======================================================================
 # Add CMAKE variables.
@@ -14,7 +21,7 @@ set(BUILD_TEST_LOGGER ON CACHE BOOL "Build the application for testing logger")
 
 
 # =======================================================================
-# Build MI CORE libraries.
+# Build MI TOOLCHAIN libraries.
 # =======================================================================
 
 # =======================================================================
