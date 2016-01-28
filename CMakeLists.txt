@@ -14,15 +14,16 @@ cmake_minimum_required(VERSION 3.2)
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -Wall")
 
 # =======================================================================
-# Find Boost package
+# Find required packages
 # =======================================================================
-find_package(Boost 1.58 REQUIRED COMPONENTS system thread random program_options regex date_time)
 
+# Find boost package
+find_package(Boost 1.58 REQUIRED COMPONENTS system thread random program_options regex date_time)
 # Try to include Boost as system directory to suppress it's warnings
 include_directories(SYSTEM ${Boost_INCLUDE_DIR})
 
 # =======================================================================
-# RPATH settings.
+# RPATH settings
 # =======================================================================
 # use, i.e. don't skip the full RPATH for the build tree
 SET(CMAKE_SKIP_BUILD_RPATH  FALSE)
@@ -44,9 +45,7 @@ add_subdirectory(src)
 # =======================================================================
 
 # include directories
-set(CMAKE_INCLUDE_DIRS_CONFIGCMAKE 
-	"${CMAKE_INSTALL_PREFIX}/include"
-)
+set(CMAKE_INCLUDE_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/include")
 
 # lib directory
 
