@@ -14,6 +14,9 @@
 
 #include <stdexcept>
 
+#include <boost/atomic.hpp>
+#include <boost/thread/mutex.hpp>
+
 #include <application/Application.hpp>
 
 namespace mic {

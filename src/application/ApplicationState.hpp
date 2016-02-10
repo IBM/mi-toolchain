@@ -21,7 +21,10 @@ namespace mic {
  */
 namespace application {
 
-
+/*!
+ * Forward declaration of the application class.
+ */
+class Application;
 
 /*!
  * \brief Class storing the state of the application (modes, sleep interval etc.).
@@ -211,6 +214,11 @@ public:
 		return external_data_synchronization_mutex;
 	}
 
+	/*!
+	 *  Registers application in APP_STATE.
+	 */
+	void setApplication(mic::application::Application *application_);
+
 private:
     /*!
      * Private instance - accessed as atomic operation.
@@ -275,6 +283,11 @@ private:
 	 * Method responsible for initialization of all variables that are property-dependent - here not required, yet empty.
 	 */
 	virtual void initializePropertyDependentVariables() { };
+
+	/*!
+	 * Pointer to the currently executed application.
+	 */
+	mic::application::Application *application;
 
 };
 

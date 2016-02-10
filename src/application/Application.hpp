@@ -10,8 +10,12 @@
 
 #include <string>
 
-#include <application/ApplicationState.hpp>
 #include <configuration/PropertyTree.hpp>
+
+#include <application/ApplicationState.hpp>
+
+#include <logger/Log.hpp>
+using namespace mic::logger;
 
 namespace mic {
 namespace application {
@@ -45,6 +49,11 @@ public:
 	 * Runs the application - abstract, must be implemented by a child class/application.
 	 */
 	virtual void run() = 0;
+
+	/*!
+	 * Displays application status.
+	 */
+	virtual void displayStatus();
 
 protected:
 	/*!

@@ -14,10 +14,17 @@ Application::Application(std::string node_name_) : PropertyTree(node_name_)
 {
 
 	// Reset iteration counter.
-	iteration = 1;
+	iteration = 0;
+
+	// Register application in APP_STATE.
+	APP_STATE->setApplication(this);
 }
 
 
+void Application::displayStatus() {
+	// Iteration number.
+	LOG(LSTATUS) << "Iteration:\t\t" << iteration;
+}
 
 } /* namespace application */
 } /* namespace mic */

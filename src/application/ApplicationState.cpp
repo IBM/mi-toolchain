@@ -7,6 +7,8 @@
 
 #include <application/ApplicationState.hpp>
 
+#include <application/Application.hpp>
+
 #include <logger/Log.hpp>
 
 namespace mic {
@@ -208,8 +210,12 @@ void ApplicationState::setSleepIntervalUS(double sleep_interval_in_microseconds)
 
 void ApplicationState::multiplySleepInterval(double m_) {
 	boost::mutex::scoped_lock lock(internal_data_synchronization_mutex);
-	application_sleep_interval = application_sleep_interval * m_;
-	// Truncate sleep interval.
+	// Special case: leave 1, keeping the integer rounding of (>) ? : operator.
+	if (application_sleep_interval < 2)
+		application_sleep_interval = 2;
+	else
+		application_sleep_interval = application_sleep_interval * m_;
+	// Truncate sleep interval - with rounding to integers.
 	application_sleep_interval = ((application_sleep_interval > 10000000) ? 10000000 : application_sleep_interval);
 	LOG(LSTATUS) << "Setting sleep interval to " << application_sleep_interval << " [us]";
 }
@@ -217,7 +223,7 @@ void ApplicationState::multiplySleepInterval(double m_) {
 void ApplicationState::divideSleepInterval(double d_) {
 	boost::mutex::scoped_lock lock(internal_data_synchronization_mutex);
 	application_sleep_interval = application_sleep_interval / d_;
-	// Truncate sleep interval.
+	// Truncate sleep interval - with rounding to integers.
 	application_sleep_interval = ((application_sleep_interval < 1) ? 1 : application_sleep_interval);
 	LOG(LSTATUS) << "Setting sleep interval to " << application_sleep_interval << " [us]";
 }
@@ -240,7 +246,15 @@ void ApplicationState::displayStatus() {
 	// Using gui/cli/visualization.
 	LOG(LSTATUS) << "USING OPENGL :\t\t" << ((using_opengl) ? "YES" : "NO");
 	LOG(LSTATUS) << "USING NCURSES:\t\t" << ((using_ncurses) ? "YES" : "NO");
+
+	// Displays application "extended status"
+	application->displayStatus();
 	LOG(LSTATUS) <<"----------------------------------------------------------------";
+}
+
+
+void ApplicationState::setApplication(mic::application::Application *application_) {
+	application = application_;
 }
 
 
