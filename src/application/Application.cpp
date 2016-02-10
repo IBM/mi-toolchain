@@ -14,7 +14,7 @@ Application::Application(std::string node_name_) : PropertyTree(node_name_)
 {
 
 	// Reset iteration counter.
-	iteration = 0;
+	iteration = 1;
 }
 
 
