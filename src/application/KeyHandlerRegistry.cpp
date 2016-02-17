@@ -10,6 +10,12 @@
 namespace mic {
 namespace application {
 
+class dupa {
+public:
+	char keypressed;
+};
+
+
 KeyHandlerRegistry::KeyHandlerRegistry() {
 	//key_map.insert(std::make_pair((char)27, std::make_pair( "ESC - exit the program", boost::bind(&KeyHandler::functionQuit, this ) ) ) );
 
@@ -31,6 +37,9 @@ KeyHandlerRegistry::KeyHandlerRegistry() {
 	registerKeyhandler('l', "l - toggles learning mode on/off", &KeyHandlerRegistry::keyhandlerToggleLearning, this);
 	registerKeyhandler(' ', "PAUSE - stops/starts the continuous execution of the program", &KeyHandlerRegistry::keyhandlerPause, this);
 	registerKeyhandler('\\', "\\ - performs a single step", &KeyHandlerRegistry::keyhandlerSingleStep, this);
+
+
+	//keyhandler_t kh = MAKE_KEYHANDLER('l', "l - toggles learning mode on/off", &KeyHandlerRegistry::keyhandlerToggleLearning);
 }
 
 KeyHandlerRegistry::~KeyHandlerRegistry() {

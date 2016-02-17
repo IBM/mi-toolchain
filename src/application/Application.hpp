@@ -56,10 +56,6 @@ public:
 	virtual void displayStatus();
 
 protected:
-	/*!
-	 * Config path/filename.
-	 */
-	std::string config_filename;
 
 	/// Iteration counter.
 	unsigned long iteration;

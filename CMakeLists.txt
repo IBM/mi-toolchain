@@ -17,10 +17,19 @@ set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -Wall")
 # Find required packages
 # =======================================================================
 
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+
 # Find boost package
 find_package(Boost 1.58 REQUIRED COMPONENTS system thread random program_options regex date_time)
 # Try to include Boost as system directory to suppress it's warnings
 include_directories(SYSTEM ${Boost_INCLUDE_DIR})
+
+find_package( OpenBLAS )
+include_directories(${OpenBLAS_INCLUDE_DIR})
+if(NOT OpenBLAS_FOUND)
+    message(ERROR " OpenBLAS not found!")
+endif(NOT OpenBLAS_FOUND)
+
 
 # =======================================================================
 # RPATH settings

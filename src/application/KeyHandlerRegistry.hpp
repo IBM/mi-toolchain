@@ -30,10 +30,29 @@ namespace application {
 
 
 /*!
+ * \brief Basic handler type representing <description, handler function> pair.
+ * \author tkornuta
+ */
+typedef std::pair<std::string, boost::function<void ()> > handler_t;
+
+/*!
+ * \brief Basic handler type representing <key, description, handler function> triplet.
+ * \author tkornuta
+ */
+typedef std::pair<char, handler_t > keyhandler_t;
+
+/*!
+ * \brief Macro returning  keyhandler (key-description-handler triplet).
+ * \author tkornuta
+ */
+#define MAKE_KEYHANDLER(KEY, DESCRIPTION, METHOD) std::make_pair((char)(KEY), std::make_pair( (DESCRIPTION), (METHOD) ) )
+
+
+/*!
  * \brief Basic type storing <key, description, handler function> triplets.
  * \author tkornuta
  */
-typedef std::map<char, std::pair<std::string, boost::function<void ()> > > KeyHandlerMap_t;
+typedef std::map<char, handler_t > KeyHandlerMap_t;
 
 /*!
  * \brief Macro for registration of key-description-handler triplets in KeyHandlers.
@@ -78,6 +97,11 @@ public:
 	void registerKeyhandler (char key_, std::string description_, void (SlotClass::*function_)(void), SlotClass *obj_ ) {
 		//boost::function<void ()> f = boost::bind(function_, obj_ );
 		key_handler_map.insert(std::make_pair((char)(key_), std::make_pair( (description_), boost::bind(function_, obj_ ) ) ) );
+	}
+
+
+	void registerKeyhandler (keyhandler_t kh_) {
+
 	}
 
 protected:
