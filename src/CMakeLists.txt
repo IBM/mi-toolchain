@@ -19,7 +19,6 @@ set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl")
 
 set(BUILD_TEST_LOGGER ON CACHE BOOL "Build the application for testing logger")
 
-
 # =======================================================================
 # Build MI TOOLCHAIN libraries.
 # =======================================================================

@@ -14,9 +14,12 @@ namespace mic {
 namespace application {
 
 /*!
- * \brief Parent class for all applications basing on episodes. Each episode consists of two phases: a training phase (first), and testing phase (second). Each phase will end when then an adequate method (performLearning/TrainingStep) will return false.
+ * \brief Parent class for all applications basing on episodes. Each episode consists of two phases: a training phase (first), and testing phase (second).
+ * Each phase will end when then an adequate method (performLearning/TrainingStep) will return false.
+ * By default all computations are made within a single thread.
+ *
  * \author tkornuta
- * \date Jan 11, 2016
+ * \date Feb 17, 2016
  */
 class EpisodicTrainAndTestApplication : public mic::application::Application {
 public:

@@ -13,6 +13,13 @@
 namespace mic {
 namespace application {
 
+/*!
+ * \brief Parent class for all applications basing on continuous learning.
+ * By default all computations are made within a single thread.
+ *
+ * \author tkornuta
+ * \date Feb 17, 2016
+ */
 class ContinuousLearningApplication : public mic::application::Application {
 public:
 
