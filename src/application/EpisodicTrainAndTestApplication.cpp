@@ -13,6 +13,7 @@ namespace application {
 
 EpisodicTrainAndTestApplication::EpisodicTrainAndTestApplication(std::string node_name_) : Application(node_name_),
 		episode(0),
+		learning_iteration(0),
 		number_of_episodes("number_of_episodes", 0)
 {
 	// Register properties - so their values can be overridden (read from the configuration file).
@@ -77,8 +78,11 @@ bool EpisodicTrainAndTestApplication::performSingleStep(void) {
 			if (((unsigned int)number_of_episodes != 0) && ( episode >= (unsigned int) number_of_episodes))
 				return false;
 
+			APP_STATE->setLearningModeOn();
+
 			// Else - start a new episode.
 			startNewEpisode();
+
 		}//: if
 
 

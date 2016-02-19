@@ -71,6 +71,9 @@ protected:
 	/// Episode counter.
 	unsigned long episode;
 
+	/// Learning iteration counter.
+	unsigned long learning_iteration;
+
 	/*!
 	 * Property: number of episodes, after which the application will end. 0 (default value) deactivates terminal condition (unlimited number of episodes).
 	 */
