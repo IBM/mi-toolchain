@@ -15,7 +15,9 @@ MIC dependencies
 External dependencies
 ------------
 Additionally it depends on the following external libraries:
-   * Boost - library of free (open source) peer-reviewed portable C++ source libraries.
+   * Boost - a library of free (open source) peer-reviewed portable C++ source libraries.
+   * Eigen - a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.
+   
 
 Main modules
 ------------

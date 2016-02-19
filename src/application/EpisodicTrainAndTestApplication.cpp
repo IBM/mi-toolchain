@@ -13,7 +13,7 @@ namespace application {
 
 EpisodicTrainAndTestApplication::EpisodicTrainAndTestApplication(std::string node_name_) : Application(node_name_),
 		episode(0),
-		number_of_episodes("number_of_episodes", 8)
+		number_of_episodes("number_of_episodes", 0)
 {
 	// Register properties - so their values can be overridden (read from the configuration file).
 	registerProperty(number_of_episodes);
@@ -27,6 +27,9 @@ void EpisodicTrainAndTestApplication::run() {
 
 	// Start from learning.
 	APP_STATE->setLearningModeOn();
+
+	// Start a new episode.
+	startNewEpisode();
 
  	// Main application loop.
 	while (!APP_STATE->Quit()) {
