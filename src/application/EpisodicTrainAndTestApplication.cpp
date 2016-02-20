@@ -44,6 +44,8 @@ void EpisodicTrainAndTestApplication::run() {
 			// Enter critical section - with the use of scoped lock from AppState!
 			APP_DATA_SYNCHRONIZATION_SCOPED_LOCK();
 
+			// Increment iteration number - at START!
+			iteration++;
 			// Perform single step and - if required - break the loop.
 			if (!performSingleStep())
 				break;
@@ -56,11 +58,6 @@ void EpisodicTrainAndTestApplication::run() {
 }
 
 bool EpisodicTrainAndTestApplication::performSingleStep(void) {
-
-
-	// Increment iteration number - at START!
-	iteration++;
-
 	// If learning mode.
 	if (APP_STATE->isLearningModeOn())  {
 		// Perform learning - until there is something to learn.
@@ -84,7 +81,6 @@ bool EpisodicTrainAndTestApplication::performSingleStep(void) {
 			startNewEpisode();
 
 		}//: if
-
 
 	}//: else
 

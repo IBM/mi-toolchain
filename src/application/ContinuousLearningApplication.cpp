@@ -39,6 +39,8 @@ void ContinuousLearningApplication::run() {
 			// Enter critical section - with the use of scoped lock from AppState!
 			APP_DATA_SYNCHRONIZATION_SCOPED_LOCK();
 
+			// Increment iteration number - at START!
+			iteration++;
 			// Perform single step and - if required - break the loop.
 			if (!performSingleStep())
 				break;
@@ -51,9 +53,6 @@ void ContinuousLearningApplication::run() {
 }
 
 bool ContinuousLearningApplication::performSingleStep(void) {
-	// Increment iteration number - at START!
-	iteration++;
-
 	// Check the iteration number and settings.
 	// If learning is on AND (NOT equal to learning_iterations_to_test_ratio) - learn!
 	if (((iteration % learning_iterations_to_test_ratio) != 0) && APP_STATE->isLearningModeOn()) {
