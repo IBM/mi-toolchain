@@ -163,8 +163,8 @@ void ParameterServer::parseApplicationParameters(int argc, char* argv[]) {
 	catch(boost::property_tree::json_parser_error&) {
 		LOG(LERROR) << "Configuration file \"" << existing_config_name + "\" was not found or invalid";
 		LOG(LINFO) << "Quick fixes:";
-		LOG(LINFO) << "   specify config file name with -C switch";
-		LOG(LINFO) << "   create default configuration using -D switch";
+		LOG(LINFO) << "   specify config file name with -l switch";
+		LOG(LINFO) << "   create default configuration using -c switch";
 	}//: catch
 
 }
