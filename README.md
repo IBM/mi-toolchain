@@ -4,7 +4,7 @@ Machine Intelligence Core: Toolchain
 Description
 -----------
 
-A subproject of Machine Intelligence Core, being the main library of the framework.
+A subproject of Machine Intelligence Core, being the real "core" of the framework.
 
 Contains tools required for development of MIC-based applications, such as configuration management, loggers, application state etc.
 
