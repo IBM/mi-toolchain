@@ -28,7 +28,7 @@ Main modules
 
 Applications
 ------------
-   * logger_test application for testing console logger
+   * logger_test - application for testing console logger.
 
 Maintainer
 ----------
