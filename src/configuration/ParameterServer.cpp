@@ -165,6 +165,8 @@ void ParameterServer::parseApplicationParameters(int argc, char* argv[]) {
 		LOG(LINFO) << "Quick fixes:";
 		LOG(LINFO) << "   specify config file name with -l switch";
 		LOG(LINFO) << "   create default configuration using -c switch";
+
+		exit (0);
 	}//: catch
 
 }

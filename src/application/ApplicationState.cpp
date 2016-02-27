@@ -52,7 +52,8 @@ ApplicationState::ApplicationState() : PropertyTree("app_state"),
 		pause_mode("pause_mode", false),
 		single_step_mode("single_step_mode", false),
 		learning_mode("learning_mode", false),
-		application_sleep_interval("application_sleep_interval", 1000)
+		application_sleep_interval("application_sleep_interval", 1000),
+		application(NULL)
 {
 	// Register properties - so their values can be overridden (read from the configuration file).
 	registerProperty(pause_mode);
@@ -248,7 +249,8 @@ void ApplicationState::displayStatus() {
 	LOG(LSTATUS) << "USING NCURSES:\t\t" << ((using_ncurses) ? "YES" : "NO");
 
 	// Displays application "extended status"
-	application->displayStatus();
+	if (application)
+		application->displayStatus();
 	LOG(LSTATUS) <<"----------------------------------------------------------------";
 }
 
