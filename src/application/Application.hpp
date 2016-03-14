@@ -8,7 +8,7 @@
 #ifndef SRC_CONFIGURATION_APPLICATION_HPP_
 #define SRC_CONFIGURATION_APPLICATION_HPP_
 
-#include <application/ApplicationState.hpp>
+#include <application/ApplicationFactory.hpp>
 
 #include <logger/Log.hpp>
 using namespace mic::logger;
@@ -57,13 +57,6 @@ protected:
 	unsigned long iteration;
 
 };
-
-
-/*!
- * \brief Declaration of a function that must be defined in each application-derived class separately.
- * \author tkornuta
- */
-void RegisterApplication (void);
 
 
 } /* namespace application */

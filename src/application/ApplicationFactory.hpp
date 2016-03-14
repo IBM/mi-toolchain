@@ -17,10 +17,14 @@
 #include <boost/atomic.hpp>
 #include <boost/thread/mutex.hpp>
 
-#include <application/Application.hpp>
+//#include <application/Application.hpp>
+#include <application/ApplicationState.hpp>
 
 namespace mic {
 namespace application {
+
+// Forward declaration of a class Application.
+class Application;
 
 /*!
  * \brief Abstract class constituting interface for application factories.
@@ -140,6 +144,12 @@ private:
  */
 #define REGISTER_APPLICATION(AppType) APP_FACTORY->RegisterFactory<AppType>();
 
+
+/*!
+ * \brief Declaration of a function that must be defined in each application-derived class separately.
+ * \author tkornuta
+ */
+void RegisterApplication (void);
 
 
 
