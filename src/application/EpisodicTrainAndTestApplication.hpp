@@ -1,7 +1,7 @@
 /*!
  * \file EpisodicTrainAndTestApplication.hpp
- * \brief 
- * \author tkornut
+ * \brief Contains declaration of a base class for all episodic learning type applications.
+ * \author tkornuta
  * \date Feb 17, 2016
  */
 

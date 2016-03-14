@@ -1,7 +1,7 @@
 /*!
  * \file Property.hpp
- * \brief 
- * \author tkornut
+ * \brief Contains declaration of the Property class.
+ * \author tkornuta
  * \date Jan 4, 2016
  */
 
@@ -22,11 +22,23 @@
 
 #include <iostream>
 
+/*!
+ * \namespace mic
+ * \brief Main Machine Intelligence Core namespace.
+ * \author tkornuta
+ */
 namespace mic {
+
+/*!
+ * \namespace mic::configuration
+ * \brief Contains classes, types and types related to system configuration and management.
+ * \author tkornuta
+ */
 namespace configuration {
 
 /*!
- * Template class used for lexical casting between string and other types. Used by Property class.
+ * \brief Template class used for lexical casting between string and other types. Used by Property class.
+ * \author tkornuta
  */
 template<typename T>
 class LexicalTranslator {
@@ -57,7 +69,8 @@ public:
 
 
 /*!
- * Basic interface property - used during registration etc.
+ * \brief Basic interface property - used during registration etc.
+ * \author tkornuta
  */
 class PropertyInterface {
 public:
@@ -98,7 +111,8 @@ private:
 
 
 /*!
- * Template class for storing properties.
+ * \brief Template class for storing properties.
+ * \author tkornuta
  */
 template<class T, class Translator = LexicalTranslator<T> >
 class Property : public PropertyInterface {
@@ -150,7 +164,7 @@ public:
 	}
 
 	/*!
-	 * Compares value of the property with given value.
+	 * Compares the value of the property with given value.
 	 * @param value_ Compared value
 	 * @return True is equal.
 	 */
@@ -159,7 +173,7 @@ public:
 	}
 
 	/*!
-	 * Compares value of the property with a given value
+	 * Compares the value of the property with a given value.
 	 * @param value Compared value.
 	 * @return True is different.
 	 */
@@ -217,6 +231,7 @@ protected:
 
 /*!
  * \brief Type representing a pair consisting of name-property.
+ * \author tkornuta
  */
 typedef std::pair<std::string, PropertyInterface *> PropertyPair;
 

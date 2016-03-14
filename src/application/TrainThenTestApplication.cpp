@@ -1,7 +1,7 @@
 /*!
  * \file TrainThenTestApplication.cpp
- * \brief 
- * \author tkornut
+ * \brief Contains definition of methods of train-then-test base application class.
+ * \author tkornuta
  * \date Jan 15, 2016
  */
 

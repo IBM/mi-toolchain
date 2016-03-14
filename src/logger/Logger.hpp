@@ -19,7 +19,8 @@
 namespace mic {
 
 /*!
- * \brief Contains configuration classes and tools.
+ * \namespace mic::logger
+ * \brief Contains classes, types and defines used for dynamic, multilevel logging.
  * \author tkornuta
  */
 namespace logger {

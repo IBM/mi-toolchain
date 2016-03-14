@@ -1,6 +1,6 @@
 /*!
  * \file KeyHandlerRegistry.cpp
- * \brief Definition of methods of abstract class responsible for handling the keypressed callbacks.
+ * \brief Definition of methods of abstract KeyHandlerRegistry class responsible for handling the keypressed callbacks.
  * \author tkornuta
  * \date Nov 20, 2015
  */
@@ -9,12 +9,6 @@
 
 namespace mic {
 namespace application {
-
-class dupa {
-public:
-	char keypressed;
-};
-
 
 KeyHandlerRegistry::KeyHandlerRegistry() {
 	//key_map.insert(std::make_pair((char)27, std::make_pair( "ESC - exit the program", boost::bind(&KeyHandler::functionQuit, this ) ) ) );
@@ -38,8 +32,6 @@ KeyHandlerRegistry::KeyHandlerRegistry() {
 	registerKeyhandler(' ', "PAUSE - stops/starts the continuous execution of the program", &KeyHandlerRegistry::keyhandlerPause, this);
 	registerKeyhandler('\\', "\\ - performs a single step", &KeyHandlerRegistry::keyhandlerSingleStep, this);
 
-
-	//keyhandler_t kh = MAKE_KEYHANDLER('l', "l - toggles learning mode on/off", &KeyHandlerRegistry::keyhandlerToggleLearning);
 }
 
 KeyHandlerRegistry::~KeyHandlerRegistry() {
@@ -50,7 +42,7 @@ void KeyHandlerRegistry::keyboardHandler(unsigned char key_) {
 	LOG(LTRACE) << "KeyHandlerRegistry::keyboardHandler";
 
 	// Try to find the pressed key.
-	KeyHandlerMap_t::const_iterator iter = key_handler_map.find(key_);
+	KeyHandlerMap::const_iterator iter = key_handler_map.find(key_);
 	if (iter != key_handler_map.end())
 		// If found - execute the associated function.
 	    ((iter->second).second)();
@@ -66,7 +58,7 @@ void KeyHandlerRegistry::keyhandlerDisplayOptions(void) {
 	LOG(LSTATUS) <<"List of registered key handlers:";
 	LOG(LSTATUS) <<"----------------------------------------------------------------";
 	// Iterate through handlers and display their descriptions.
-	for(KeyHandlerMap_t::const_iterator iter = key_handler_map.begin(); iter != key_handler_map.end(); iter++) {
+	for(KeyHandlerMap::const_iterator iter = key_handler_map.begin(); iter != key_handler_map.end(); iter++) {
 		LOG(LSTATUS)<< (iter->second).first ;
 	}//: each option
 	LOG(LSTATUS) <<"----------------------------------------------------------------";

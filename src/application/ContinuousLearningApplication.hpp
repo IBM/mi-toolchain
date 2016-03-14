@@ -1,7 +1,7 @@
 /*!
  * \file ContinuousLearningApplication.hpp
- * \brief 
- * \author tkornut
+ * \brief Contains declaration of a base class for all continuous learning type applications.
+ * \author tkornuta
  * \date Jan 15, 2016
  */
 

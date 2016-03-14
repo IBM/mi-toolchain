@@ -1,6 +1,6 @@
 /*!
  * \file PropertyTree.cpp
- * \brief 
+ * \brief Contains definition of methods of the PropertyTree class.
  * \author tkornut
  * \date Jan 4, 2016
  */

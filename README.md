@@ -1,4 +1,4 @@
-Machine Intelligence Core: Toolchain
+Machine Intelligence Core: Toolchain 					{#mainpage}
 =========================================
 
 Description
@@ -33,12 +33,19 @@ Applications
 Installation
 ------------
 ```
+
 git clone git@github.rtp.raleigh.ibm.com:tkornut-us/mi-toolchain.git
+
 cd mi-toolchain
+
 mkdir build
+
 cd build
+
 cmake .. -DCMAKE_INSTALL_PREFIX=/Users/tkornut/Documents/workspace/mic/
+
 make -j4 install
+
 ```
 
 Maintainer

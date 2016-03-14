@@ -1,6 +1,6 @@
 /*!
  * \file Application.cpp
- * \brief 
+ * \brief Contains definition of methods of the base Application class.
  * \author tkornut
  * \date Dec 30, 2015
  */

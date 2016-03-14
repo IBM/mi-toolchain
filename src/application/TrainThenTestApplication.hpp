@@ -1,7 +1,7 @@
 /*!
  * \file TrainThenTestApplication.hpp
- * \brief 
- * \author tkornut
+ * \brief Contains declaration of a base class for all train-then-test type applications.
+ * \author tkornuta
  * \date Jan 15, 2016
  */
 

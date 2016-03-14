@@ -1,7 +1,7 @@
 /*!
  * \file ApplicationFactory.hpp
- * \brief 
- * \author tkornut
+ * \brief Contains declaration of application factory, used by common main files for initialization of application objects.
+ * \author tkornuta
  * \date Jan 7, 2016
  */
 

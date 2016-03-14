@@ -1,6 +1,6 @@
 /*!
  * \file ContinuousLearningApplication.cpp
- * \brief 
+ * \brief Contains definition of methods of continuous learning base application type.
  * \author tkornut
  * \date Jan 15, 2016
  */

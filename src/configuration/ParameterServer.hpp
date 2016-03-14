@@ -1,7 +1,7 @@
 /*!
  * \file ParameterServer.hpp
- * \brief 
- * \author tkornut
+ * \brief Contains declaration of parameter server singleton along with some auxiliary typedefs.
+ * \author tkornuta
  * \date Jan 4, 2016
  */
 

@@ -1,7 +1,7 @@
 /*!
  * \file ApplicationFactory.cpp
- * \brief 
- * \author tkornut
+ * \brief Contains definition of application factory methods.
+ * \author tkornuta
  * \date Jan 7, 2016
  */
 

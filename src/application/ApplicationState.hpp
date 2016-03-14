@@ -16,7 +16,8 @@
 namespace mic {
 
 /*!
- * \brief Contains configuration classes and tools.
+ * \namespace mic::application
+ * \brief Contains base application-related classes, types and types.
  * \author tkornuta
  */
 namespace application {

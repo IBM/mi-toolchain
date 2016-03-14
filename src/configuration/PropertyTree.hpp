@@ -1,7 +1,7 @@
 /*!
  * \file PropertyTree.hpp
- * \brief 
- * \author tkornut
+ * \brief Contains declaration of the PropertyTree class.
+ * \author tkornuta
  * \date Jan 4, 2016
  */
 
@@ -12,11 +12,13 @@
 
 #include <boost/property_tree/ptree.hpp>
 
-//#include <vector>
-
 namespace mic {
 namespace configuration {
 
+/*!
+ * \brief Parent class for all classes possessing properties. Contains methods useful for their management, configuration, displaying etc.
+ * \author tkornuta
+ */
 class PropertyTree {
 public:
 	/*!

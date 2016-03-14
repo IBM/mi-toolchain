@@ -1,7 +1,7 @@
 /*!
  * \file ParameterServer.cpp
- * \brief 
- * \author tkornut
+* \brief Contains declaration of parameter server class methods.
+  * \author tkornuta
  * \date Jan 4, 2016
  */
 
@@ -89,7 +89,6 @@ void ParameterServer::parseApplicationParameters(int argc, char* argv[]) {
 	application_name = tmp.substr(tmp.find_last_of("/\\")+1);
 
 	// Config filenames.
-//	std::string default_config_name = "../../configs/" + application_name + ".json";
 	std::string default_config_name = application_name + ".json";
 
 	std::string existing_config_name;

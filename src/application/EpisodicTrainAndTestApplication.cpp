@@ -1,7 +1,7 @@
 /*!
  * \file EpisodicTrainAndTestApplication.cpp
- * \brief 
- * \author tkornut
+ * \brief Contains definition of methods of episodic learning application base class.
+ * \author tkornuta
  * \date Feb 17, 2016
  */
 

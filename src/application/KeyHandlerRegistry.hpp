@@ -1,6 +1,6 @@
 /*!
  * \file KeyHandlerRegistry.hpp
- * \brief Contains declaration of the abstract class responsible for handling the keypressed callbacks.
+ * \brief Contains declaration of the abstract KeyHandlerRegistry class responsible for handling the keypressed callbacks.
  * \author tkornuta
  * \date Nov 20, 2015
  */
@@ -33,13 +33,13 @@ namespace application {
  * \brief Basic handler type representing <description, handler function> pair.
  * \author tkornuta
  */
-typedef std::pair<std::string, boost::function<void ()> > handler_t;
+typedef std::pair<std::string, boost::function<void ()> > Handler;
 
 /*!
  * \brief Basic handler type representing <key, description, handler function> triplet.
  * \author tkornuta
  */
-typedef std::pair<char, handler_t > keyhandler_t;
+typedef std::pair<char, Handler > KeyHandler;
 
 /*!
  * \brief Macro returning  keyhandler (key-description-handler triplet).
@@ -52,7 +52,7 @@ typedef std::pair<char, handler_t > keyhandler_t;
  * \brief Basic type storing <key, description, handler function> triplets.
  * \author tkornuta
  */
-typedef std::map<char, handler_t > KeyHandlerMap_t;
+typedef std::map<char, Handler > KeyHandlerMap;
 
 /*!
  * \brief Macro for registration of key-description-handler triplets in KeyHandlers.
@@ -85,7 +85,7 @@ public:
 	 */
 	virtual void keyboardHandler(unsigned char key);
 
-	/*
+	/*!
 	 * Method for registration of user-defined handlers.
 	 *
 	 * @param key_ Key triggering the handler.
@@ -100,7 +100,7 @@ public:
 	}
 
 
-	void registerKeyhandler (keyhandler_t kh_) {
+	void registerKeyhandler (KeyHandler kh_) {
 
 	}
 
@@ -109,7 +109,7 @@ protected:
 	/*!
 	 * Map of <key, description, function>.
 	 */
-	KeyHandlerMap_t key_handler_map;
+	KeyHandlerMap key_handler_map;
 
 	/*!
 	 * Keyhandler: quits the program.

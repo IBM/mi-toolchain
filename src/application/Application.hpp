@@ -1,16 +1,12 @@
 /*!
  * \file Application.hpp
- * \brief 
- * \author tkornut
+ * \brief Contains declaration of a base class for all applications.
+ * \author tkornuta
  * \date Dec 30, 2015
  */
 
 #ifndef SRC_CONFIGURATION_APPLICATION_HPP_
 #define SRC_CONFIGURATION_APPLICATION_HPP_
-
-#include <string>
-
-#include <configuration/PropertyTree.hpp>
 
 #include <application/ApplicationState.hpp>
 
