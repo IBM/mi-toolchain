@@ -11,7 +11,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
 
 # Check, whether all necessary libraries are linked
-set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl") 
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ") 
 
 # =======================================================================
 # Add CMAKE variables.
@@ -29,8 +29,8 @@ FILE(GLOB files system_utils/*.hpp)
 install(FILES ${files} DESTINATION include/system_utils)
   
 # Create shared library containing SYSTEM UTILS used by all other libraries. DEPRICATED.
-file(GLOB system_utils_src system_utils/*.cpp)
-add_library(system_utils SHARED ${system_utils_src})
+#file(GLOB system_utils_src system_utils/*.cpp)
+#add_library(system_utils SHARED ${system_utils_src})
 
 
 # =======================================================================
@@ -73,7 +73,7 @@ target_link_libraries(application ${Boost_LIBRARIES} logger configuration)
 # Install target libraries.
 # =======================================================================
 
-install(TARGETS system_utils logger configuration application LIBRARY DESTINATION lib)
+install(TARGETS logger configuration application LIBRARY DESTINATION lib)
 
 
 # =======================================================================
