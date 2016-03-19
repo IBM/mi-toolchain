@@ -12,6 +12,9 @@
 #include <boost/thread/mutex.hpp>
 
 #include <configuration/PropertyTree.hpp>
+#ifdef _WIN32
+#include <system_utils/windows_extras.hpp> // extra windows stuff
+#endif
 
 namespace mic {
 

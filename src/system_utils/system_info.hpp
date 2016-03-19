@@ -9,6 +9,9 @@
 #define SRC_SYSTEM_UTILS_SYSTEM_INFO_HPP_
 
 #include <string>
+#ifdef _WIN32
+#include <sys/time.h>
+#endif
 
 namespace mic {
 

@@ -7,6 +7,9 @@
 
 #include <logger/Log.hpp>
 #include <logger/ConsoleOutput.hpp>
+#ifdef _WIN32
+#include <system_utils/windows_extras.hpp>  
+#endif
 using namespace mic::logger;
 
 

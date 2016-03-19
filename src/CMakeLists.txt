@@ -8,7 +8,11 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 # Set compiler/linker flags.
 # =======================================================================
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+if (WIN32)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
+else ()
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+endif()
 
 # Check, whether all necessary libraries are linked
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ") 
@@ -73,8 +77,11 @@ target_link_libraries(application ${Boost_LIBRARIES} logger configuration)
 # Install target libraries.
 # =======================================================================
 
-install(TARGETS system_utils logger configuration application LIBRARY DESTINATION lib)
-
+if (WIN32)
+  install(TARGETS system_utils logger configuration application LIBRARY DESTINATION lib ARCHIVE DESTINATION lib RUNTIME DESTINATION bin)
+else ()
+  install(TARGETS system_utils logger configuration application LIBRARY DESTINATION lib)
+endif ()
 
 # =======================================================================
 # Build and install - logger test application.

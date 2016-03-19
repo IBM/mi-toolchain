@@ -6,6 +6,9 @@
  */
 
 #include <application/ContinuousLearningApplication.hpp>
+#ifdef _WIN32
+#include <system_utils/windows_extras.hpp>
+#endif
 
 namespace mic {
 namespace application {

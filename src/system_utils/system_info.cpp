@@ -9,7 +9,10 @@
 
 #ifdef __APPLE__
 #include <sys/sysctl.h>
-#endif
+#elif _WIN32
+#include <Windows.h>
+#include <stdint.h> // portable: uint64_t   MSVC: __int64 
+#endif  
 
 #include <fstream>
 #include <sstream>
