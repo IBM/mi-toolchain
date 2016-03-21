@@ -77,11 +77,7 @@ target_link_libraries(application ${Boost_LIBRARIES} logger configuration)
 # Install target libraries.
 # =======================================================================
 
-if (WIN32)
-  install(TARGETS system_utils logger configuration application LIBRARY DESTINATION lib ARCHIVE DESTINATION lib RUNTIME DESTINATION bin)
-else ()
-  install(TARGETS system_utils logger configuration application LIBRARY DESTINATION lib)
-endif ()
+install(TARGETS system_utils logger configuration application LIBRARY DESTINATION lib ARCHIVE DESTINATION lib RUNTIME DESTINATION bin)
 
 # =======================================================================
 # Build and install - logger test application.
