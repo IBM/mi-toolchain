@@ -42,9 +42,9 @@ public:
 	virtual void initialize(int argc, char* argv[]) = 0;
 
 	/*!
-	 * Runs the application - abstract, must be implemented by a child class/application.
+	 * Runs the application - virtual, can be overridden by a child class/application.
 	 */
-	virtual void run() = 0;
+	virtual void run();
 
 	/*!
 	 * Displays application status.
@@ -55,6 +55,16 @@ protected:
 
 	/// Iteration counter.
 	unsigned long iteration;
+
+	/*!
+	 * Property: number of episodes, after which the application will end. 0 (default value) deactivates terminal condition (unlimited number of episodes).
+	 */
+	mic::configuration::Property<long> number_of_iterations;
+
+	/*!
+	 * Performs single step of computations - abstract, to be overridden.
+	 */
+	virtual bool performSingleStep() = 0;
 
 };
 
