@@ -3,7 +3,7 @@
 # ==============================================================================
 
 # Provide the include directory to the caller
-SET(MIToolchain_INCLUDE_DIRS )
+SET(MIToolchain_INCLUDE_DIRS @CMAKE_INCLUDE_DIRS_CONFIGCMAKE@)
 INCLUDE_DIRECTORIES(@CMAKE_INCLUDE_DIRS_CONFIGCMAKE@)
 
 # Provide the libs directory to the caller
@@ -12,3 +12,6 @@ LINK_DIRECTORIES(${MIToolchain_LIB_DIR})
 
 # Provide the variable containing list of libraries to the caller
 SET(MIToolchain_LIBRARIES "@MIToolchain_LIBRARIES@")
+
+message("-- MI Toolchain version: ${MIToolchain_VERSION}")
+message("-- Found the following MI Toolchain libraries:\n--   ${MIToolchain_LIBRARIES} ")
