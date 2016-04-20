@@ -2,10 +2,10 @@
 project(MIToolchain CXX)
 
 #  Set current version number.
-set (MIToolchain_VERSION_MAJOR 1)
-set (MIToolchain_VERSION_MINOR 0)
-set (MIToolchain_VERSION_PATCH 0)
-set (MIToolchain_VERSION ${MIToolchain_VERSION_MAJOR}.${MIToolchain_VERSION_MINOR}.${MIToolchain_VERSION_PATCH})
+set (MIToolchain_MAJOR_VERSION 1)
+set (MIToolchain_MINOR_VERSION 0)
+set (MIToolchain_PATCH_VERSION 0)
+set (MIToolchain_VERSION ${MIToolchain_MAJOR_VERSION}.${MIToolchain_MINOR_VERSION}.${MIToolchain_PATCH_VERSION})
 
 # CMake required version.
 cmake_minimum_required(VERSION 3.2)
@@ -40,45 +40,34 @@ SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_PREFIX}/lib")
 # which point to directories outside the build tree to the install RPATH
 SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 
+# =======================================================================
+# Cmake configuration
+# =======================================================================
+# Create the cached variable for sstoring all library names.
+set(MIToolchain_LIBRARIES "" CACHE INTERNAL "" FORCE)
+
+# add subdirectory.
 add_subdirectory(src)
 
-# =======================================================================
-# MIToolchainConfig.cmake preparation
-# =======================================================================
+message ("-- Configured MIToolchain libraries:\n" "--   " "${MIToolchain_LIBRARIES}")
 
-# include directories
+# Set include directory
 set(CMAKE_INCLUDE_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/include")
-
-# lib directory
-
+# Set lib directory
 set(CMAKE_LIB_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/lib")
-
-configure_file("${CMAKE_CURRENT_SOURCE_DIR}/MIToolchainConfig.cmake.in" "${CMAKE_BINARY_DIR}/MIToolchainConfig.cmake" IMMEDIATE @ONLY)
-
-install(FILES ${CMAKE_BINARY_DIR}/MIToolchainConfig.cmake DESTINATION ${CMAKE_INSTALL_PREFIX}/share/MIToolchain/)
+# Set variable that will store generated libraries
 
 # =======================================================================
-# CPack: binary installer generator
+# Preparation of cmake configs
 # =======================================================================
 
-# CPack variables used when generating binary installer
-set(CPACK_PACKAGE_NAME "MIToolchain")
-set(CPACK_PACKAGE_VENDOR "MIToolchain")
-set(CPACK_PACKAGE_DESCRIPTION_SUMMARY "MIToolchain - Machine Intelligence Toolchain")
-set(CPACK_PACKAGE_VERSION ${MIToolchain_VERSION})
-set(CPACK_PACKAGE_VERSION_MAJOR ${MIToolchain_VERSION_MAJOR})
-set(CPACK_PACKAGE_VERSION_MINOR ${MIToolchain_VERSION_MINOR})
-set(CPACK_PACKAGE_VERSION_PATCH ${MIToolchain_VERSION_PATCH})
-set(CPACK_PACKAGE_INSTALL_DIRECTORY "MIToolchain")
+# Configure *Config.cmake and *ConfigVersion.cmake
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/MIToolchainConfig.cmake.in" "${CMAKE_BINARY_DIR}/MIToolchainConfig.cmake" @ONLY)
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/MIToolchainConfigVersion.cmake.in" "${CMAKE_BINARY_DIR}/MIToolchainConfigVersion.cmake" @ONLY)
 
-# License file
-#set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
-
-# Tell CPack all of the components to install. The "ALL"
-# refers to the fact that this is the set of components that
-# will be included when CPack is instructed to put everything
-# into the binary installer (the default behavior).
-set(CPACK_COMPONENTS_ALL system_utils logger configuration application)
-
-# This must always be last!
-include(CPack)
+# Install the *Config.cmake and *ConfigVersion.cmake
+install(FILES
+  "${CMAKE_BINARY_DIR}/MIToolchainConfig.cmake"
+  "${CMAKE_BINARY_DIR}/MIToolchainConfigVersion.cmake"
+  DESTINATION "${CMAKE_INSTALL_PREFIX}/share/MIToolchain/")
+  

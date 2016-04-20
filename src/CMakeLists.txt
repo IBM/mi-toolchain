@@ -36,6 +36,8 @@ install(FILES ${files} DESTINATION include/system_utils)
 file(GLOB system_utils_src system_utils/*.cpp)
 add_library(system_utils SHARED ${system_utils_src})
 
+# Add to variable storing all libraries/targets.
+set(MIToolchain_LIBRARIES ${MIToolchain_LIBRARIES} "system_utils" CACHE INTERNAL "" FORCE)
 
 # =======================================================================
 # Install includes related to LOGGER used by other libraries.
@@ -47,7 +49,8 @@ file(GLOB logger_src logger/*.cpp)
 add_library(logger SHARED ${logger_src})
 target_link_libraries(logger ${Boost_LIBRARIES} )
 
-
+# Add to variable storing all libraries/targets.
+set(MIToolchain_LIBRARIES ${MIToolchain_LIBRARIES} "logger" CACHE INTERNAL "" FORCE)
 
 # =======================================================================
 # Install includes related to CONFIGURATION used by other libraries.
@@ -59,7 +62,8 @@ file(GLOB configuration_src configuration/*.cpp)
 add_library(configuration SHARED ${configuration_src})
 target_link_libraries(configuration ${Boost_LIBRARIES} logger)
 
-
+# Add to variable storing all libraries/targets.
+set(MIToolchain_LIBRARIES ${MIToolchain_LIBRARIES} "configuration" CACHE INTERNAL "" FORCE)
 
 # =======================================================================
 # Install includes related to APPLICATION used by other libraries.
@@ -71,13 +75,14 @@ file(GLOB application_src application/*.cpp)
 add_library(application SHARED ${application_src})
 target_link_libraries(application ${Boost_LIBRARIES} logger configuration)
 
-
+# Add to variable storing all libraries/targets.
+set(MIToolchain_LIBRARIES ${MIToolchain_LIBRARIES} "application" CACHE INTERNAL "" FORCE)
 
 # =======================================================================
 # Install target libraries.
 # =======================================================================
 
-install(TARGETS system_utils logger configuration application LIBRARY DESTINATION lib ARCHIVE DESTINATION lib RUNTIME DESTINATION bin)
+install(TARGETS ${MIToolchain_LIBRARIES} LIBRARY DESTINATION lib ARCHIVE DESTINATION lib RUNTIME DESTINATION bin)
 
 # =======================================================================
 # Build and install - logger test application.
