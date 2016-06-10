@@ -24,7 +24,7 @@ KeyHandlerRegistry::KeyHandlerRegistry() {
 
 	// Time keyhandlers.
 	registerKeyhandler('-', "- - slows down the processing (multiplies the sleep interval by 1.5)", &KeyHandlerRegistry::keyhandlerSlowDown, this);
-	registerKeyhandler('+', "+ - fastens up the processing (divides the sleep interval by 1.5)", &KeyHandlerRegistry::keyhandlerFastenUp, this);
+	registerKeyhandler('+', "+ - speeds up the processing (divides the sleep interval by 1.5)", &KeyHandlerRegistry::keyhandlerFastenUp, this);
 	registerKeyhandler('=', "= - resets the processing time (sets the sleep interval to 1s)", &KeyHandlerRegistry::keyhandlerResetProcessingTime, this);
 
 	// Application modes.
