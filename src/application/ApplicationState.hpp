@@ -223,6 +223,9 @@ public:
 	 */
 	void setApplication(mic::application::Application *application_);
 
+  	/// Property: single step mode.
+	mic::configuration::Property<bool> single_step_mode;
+
 private:
     /*!
      * Private instance - accessed as atomic operation.
@@ -250,9 +253,6 @@ private:
 
 	/// Property: pause application mode.
 	mic::configuration::Property<bool> pause_mode;
-
-	/// Property: single step mode.
-	mic::configuration::Property<bool> single_step_mode;
 
 	/// Property: learning/testing mode.
 	mic::configuration::Property<bool> learning_mode;
