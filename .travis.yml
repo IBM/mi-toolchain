@@ -1,0 +1,19 @@
+os: linux
+dist: trusty
+sudo: required
+language: cpp
+compiler: gcc
+
+addons:
+  apt:
+    packages:
+      - libboost-all-dev
+      - libopenblas-dev
+
+before_script:
+  - mkdir build
+  - cd build
+  - cmake ..
+
+script:
+  - make -j8
