@@ -1,5 +1,5 @@
 # Project name
-project(MIToolchain CXX)
+project(MIToolchain CXX C)
 
 #  Set current version number.
 set (MIToolchain_MAJOR_VERSION 1)
@@ -11,7 +11,7 @@ set (MIToolchain_VERSION ${MIToolchain_MAJOR_VERSION}.${MIToolchain_MINOR_VERSIO
 cmake_minimum_required(VERSION 2.8)
 
 # Add C++11 dependency.
-set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -Wall")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -Wall")
 
 # =======================================================================
 # Find required packages
