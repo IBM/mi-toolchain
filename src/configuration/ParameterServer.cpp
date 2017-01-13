@@ -9,8 +9,6 @@
 
 #include <boost/property_tree/json_parser.hpp>
 
-#include <boost/program_options.hpp>
-
 namespace mic {
 namespace configuration {
 
@@ -52,9 +50,10 @@ ParameterServer* ParameterServer::getInstance() {
 	return tmp;
 }
 
-ParameterServer::ParameterServer() {
+ParameterServer::ParameterServer()
+: program_options("Allowed options") 
+{
 	// TODO Auto-generated constructor stub
-
 }
 
 void ParameterServer::print(boost::property_tree::ptree const& pt_)
@@ -99,8 +98,8 @@ void ParameterServer::parseApplicationParameters(int argc, char* argv[]) {
 	int log_lvl;
 
 	// Declare the supported command-line options
-	po::options_description desc("Allowed options");
-	desc.add_options()
+	// NOTE: Program options are already created (in constructor) and may have been extended by applications.
+	program_options.add_options()
 		("help,h", "Display (h)elp message")
 		("load-config,l", po::value<std::string>(&existing_config_name)->default_value(default_config_name.c_str()), "(L)oad configuration from given JSON file")
 		("create-config,c", "(C)reate default configuration JSON file")
@@ -112,7 +111,7 @@ void ParameterServer::parseApplicationParameters(int argc, char* argv[]) {
 
 	// Try to parse the parameters.
 	try {
-		po::store(po::parse_command_line(argc, argv, desc), vm);
+		po::store(po::parse_command_line(argc, argv, program_options), vm);
 		po::notify(vm);
 	}
 	catch (const po::error & u) {
@@ -122,7 +121,7 @@ void ParameterServer::parseApplicationParameters(int argc, char* argv[]) {
 
 
 	if (vm.count("help")) {
-		std::cout << desc << "\n";
+		std::cout << program_options << "\n";
 		exit (0);
 	}
 
@@ -210,8 +209,13 @@ void ParameterServer::initializePropertyDependentVariables() {
     LOG(LINFO) << "Property-dependent variables initialized";
 }
 
+boost::program_options::options_description &ParameterServer::getProgramOptions() {
+	return program_options;
+}
 
-
+const boost::program_options::variables_map &ParameterServer::getProgramArguments() {
+	return program_arguments;
+}
 
 } /* namespace configuration */
 } /* namespace mic */
