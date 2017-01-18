@@ -45,6 +45,7 @@ cd code_docs
 
 # Get the current gh-pages branch
 git clone -b gh-pages https://git@$GH_REPO_REF
+git clone git@github.ibm.com/tkornut/ros-beginner-tutorials.git
 cd $GH_REPO_NAME
 
 ##### Configure git.
