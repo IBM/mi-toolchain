@@ -31,15 +31,16 @@ addons:
       - doxygen-gui
       - graphviz
 
+# Configure cmake and prepare installation dir.
 before_script:
   - mkdir $TRAVIS_BUILD_DIR/../mic/
   - mkdir build
   - cd build
   - cmake .. -DCMAKE_INSTALL_PREFIX=$TRAVIS_BUILD_DIR/../mic/
 
-# Build your code e.g. by calling make
+# Build and install.
 script:
-  - make -j8 install
+  - make install
 
 # Generate and deploy documentation
 after_success:
