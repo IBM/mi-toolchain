@@ -17,7 +17,7 @@ env:
   global:
     - GH_REPO_NAME: mi-toolchain
     - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
-    - GH_REPO_REF: github.ibm.com/tkornut/mi-toolchain.git
+    - GH_REPO_REF: github.ibm.com:tkornut/mi-toolchain.git
 
 # Install dependencies
 addons:
@@ -47,3 +47,4 @@ after_success:
   - cd $TRAVIS_BUILD_DIR
   - chmod +x generateDocumentationAndDeploy.sh
   - ./generateDocumentationAndDeploy.sh
+
