@@ -5,7 +5,7 @@ language: cpp
 compiler: gcc
 
 # This will run on Travis' 'new' container-based infrastructure
-sudo: false
+#sudo: false
 
 # Blacklist
 branches:
@@ -31,14 +31,14 @@ addons:
       - doxygen-gui
       - graphviz
 
-#before_script:
-#  - mkdir build
-#  - cd build
-#  - cmake ..
+before_script:
+  - mkdir build
+  - cd build
+# - cmake ..
 
 # Build your code e.g. by calling make
-#script:
-#  - make -j8 install
+script:
+  - make -j8 install
 
 # Generate and deploy documentation
 after_success:
