@@ -10,6 +10,7 @@
 
 #include <boost/atomic.hpp>
 #include <boost/thread/mutex.hpp>
+#include <boost/program_options.hpp>
 
 #include <logger/Log.hpp>
 using namespace mic::logger;
@@ -68,6 +69,10 @@ public:
 	void registerPropertyTree(mic::configuration::PropertyTree* pt_);
 
 
+	boost::program_options::options_description &getProgramOptions();
+
+	const boost::program_options::variables_map &getProgramArguments();
+
 	/*!
 	 * Method parses (and stores) the application parameters.
 	 * @param argc Number of application parameters.
@@ -123,6 +128,23 @@ private:
 	 * Property tree.
 	 */
     boost::property_tree::ptree config_tree;
+
+    /*!
+     * Program options, to parse command line arguments.
+     * This gets populated by default with a few arguments (like "help") and applications
+     * can add additional options by accessing this field via getProgramOptions()
+     */
+	boost::program_options::options_description program_options;
+
+
+	/**!
+	 * The program_arguments holds the actual command line arguments received.
+	 * This variable takes value only after parseApplicationArguments().
+	 * Note that before that call, an application may call getProgramOptions() and extend
+	 * the set of allowed command line arguments with new command line options;
+	 * then call getProgramArguments to obtain their actual values.
+	 */
+	boost::program_options::variables_map program_arguments;
 
     /*!
      * Vector of registered property trees.
