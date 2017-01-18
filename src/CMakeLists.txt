@@ -4,18 +4,6 @@ include(CheckCXXCompilerFlag)
 # Include current dir
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-# =======================================================================
-# Set compiler/linker flags.
-# =======================================================================
-
-if (WIN32)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
-else ()
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
-endif()
-
-# Check, whether all necessary libraries are linked
-set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ") 
 
 # =======================================================================
 # Add CMAKE variables.
