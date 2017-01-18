@@ -251,7 +251,7 @@ private:
 	/// Property: pause application mode.
 	mic::configuration::Property<bool> pause_mode;
 
-	/// Property: single step mode.
+  	/// Property: single step mode.
 	mic::configuration::Property<bool> single_step_mode;
 
 	/// Property: learning/testing mode.

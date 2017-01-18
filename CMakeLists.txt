@@ -1,9 +1,9 @@
 # Project name
-project(MIToolchain CXX C)
+project(MIToolchain CXX)
 
 #  Set current version number.
 set (MIToolchain_MAJOR_VERSION 1)
-set (MIToolchain_MINOR_VERSION 0)
+set (MIToolchain_MINOR_VERSION 1)
 set (MIToolchain_PATCH_VERSION 0)
 set (MIToolchain_VERSION ${MIToolchain_MAJOR_VERSION}.${MIToolchain_MINOR_VERSION}.${MIToolchain_PATCH_VERSION})
 
