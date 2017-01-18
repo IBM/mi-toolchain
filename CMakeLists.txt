@@ -23,7 +23,7 @@ set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ")
 # =======================================================================
 # Find required packages
 # =======================================================================
-
+# Add path to cmake dir.
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 # Find boost package
@@ -53,16 +53,19 @@ SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 # Create the cached variable for sstoring all library names.
 set(MIToolchain_LIBRARIES "" CACHE INTERNAL "" FORCE)
 
-# add subdirectory.
-add_subdirectory(src)
-
-message ("-- Configured MIToolchain libraries:\n" "--   " "${MIToolchain_LIBRARIES}")
-
 # Set include directory
 set(CMAKE_INCLUDE_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/include")
 # Set lib directory
 set(CMAKE_LIB_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/lib")
 # Set variable that will store generated libraries
+
+# =======================================================================
+# Add subdirectories
+# =======================================================================
+
+add_subdirectory(src)
+
+message ("-- Configured MIToolchain libraries:\n" "--   " "${MIToolchain_LIBRARIES}")
 
 # =======================================================================
 # Preparation of cmake configs

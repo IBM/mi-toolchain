@@ -1,92 +1,18 @@
-# Check compiler flags
-include(CheckCXXCompilerFlag)
-
 # Include current dir
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+
 
 # =======================================================================
-# Add CMAKE variables.
+# Add subdirectories
 # =======================================================================
 
-set(BUILD_TEST_LOGGER ON CACHE BOOL "Build the application for testing logger")
+add_subdirectory(logger)
 
-# =======================================================================
-# Build MI TOOLCHAIN libraries.
-# =======================================================================
+add_subdirectory(configuration)
 
-# =======================================================================
-# Install includes related to SYSTEM UTILS used by other libraries.
-FILE(GLOB files system_utils/*.hpp)
-install(FILES ${files} DESTINATION include/system_utils)
-  
-# Create shared library containing SYSTEM UTILS used by all other libraries. DEPRICATED.
-file(GLOB system_utils_src system_utils/*.cpp)
-add_library(system_utils SHARED ${system_utils_src})
+add_subdirectory(application)
 
-# Add to variable storing all libraries/targets.
-set(MIToolchain_LIBRARIES ${MIToolchain_LIBRARIES} "system_utils" CACHE INTERNAL "" FORCE)
+add_subdirectory(test)
 
-# =======================================================================
-# Install includes related to LOGGER used by other libraries.
-FILE(GLOB files logger/*.hpp)
-install(FILES ${files} DESTINATION include/logger)
-  
-# Create shared library containing LOGGER used by all other libraries.
-file(GLOB logger_src logger/*.cpp)
-add_library(logger SHARED ${logger_src})
-target_link_libraries(logger ${Boost_LIBRARIES} )
-
-# Add to variable storing all libraries/targets.
-set(MIToolchain_LIBRARIES ${MIToolchain_LIBRARIES} "logger" CACHE INTERNAL "" FORCE)
-
-# =======================================================================
-# Install includes related to CONFIGURATION used by other libraries.
-FILE(GLOB files configuration/*.hpp)
-install(FILES ${files} DESTINATION include/configuration)
-  
-# Create shared library containing CONFIGURATION used by all other libraries.
-file(GLOB configuration_src configuration/*.cpp)
-add_library(configuration SHARED ${configuration_src})
-target_link_libraries(configuration ${Boost_LIBRARIES} logger)
-
-# Add to variable storing all libraries/targets.
-set(MIToolchain_LIBRARIES ${MIToolchain_LIBRARIES} "configuration" CACHE INTERNAL "" FORCE)
-
-# =======================================================================
-# Install includes related to APPLICATION used by other libraries.
-FILE(GLOB files application/*.hpp)
-install(FILES ${files} DESTINATION include/application)
-  
-# Create shared library containing APPLICATION used by all other libraries.
-file(GLOB application_src application/*.cpp)
-add_library(application SHARED ${application_src})
-target_link_libraries(application ${Boost_LIBRARIES} logger configuration)
-
-# Add to variable storing all libraries/targets.
-set(MIToolchain_LIBRARIES ${MIToolchain_LIBRARIES} "application" CACHE INTERNAL "" FORCE)
-
-# =======================================================================
-# Install target libraries.
-# =======================================================================
-
-install(TARGETS ${MIToolchain_LIBRARIES} LIBRARY DESTINATION lib ARCHIVE DESTINATION lib RUNTIME DESTINATION bin)
-
-# =======================================================================
-# Build and install - logger test application.
-# =======================================================================
-
-if(${BUILD_TEST_LOGGER})
-	# Create exeutable.
-	ADD_EXECUTABLE(logger_test tests/logger_test.cpp)
-	# Link it with shared libraries.
-	target_link_libraries(logger_test 
-		configuration
-		logger
-		${Boost_LIBRARIES}
-		)
-
-	# install test to bin directory
-	install(TARGETS logger_test RUNTIME DESTINATION bin)
-
-endif(${BUILD_TEST_LOGGER})
