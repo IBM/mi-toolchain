@@ -17,13 +17,12 @@ Contains tools required for development of MIC-based applications, such as confi
 
 Additionally it depends on the following external libraries:
    * Boost - a library of free (open source) peer-reviewed portable C++ source libraries.
-   * Eigen - a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms.
-   
+
 ### Installing the dependencies/required tools
 
 On Linux (Ubuntu 14.04): 
 
-    sudo apt-get install git cmake cmake-curses-gui doxygen libboost1.54-all-dev libeigen3-dev libopenblas-dev
+    sudo apt-get install git cmake cmake-curses-gui doxygen libboost1.54-all-dev
 
 
 ## Main modules
@@ -31,17 +30,17 @@ On Linux (Ubuntu 14.04):
    * application - classes related for management of applications, their state, keyhandlers as well application factories. 
    * configuration - classes responsible for configuration managenemt (parameters server, property tree etc.) 
    * logger - classess and functions related to logger 
-   * system_utils - timers etc. (depricated)
 
 ## Applications
 
    * logger_test - application for testing console logger.
 
 ## Installation
+In order to download, configure, make and install new "clean" version of mi-toolchain please execute the following:
 
 ```
 
-cd workspace
+cd ~/workspace
 
 git clone git@github.ibm.com:tkornut/mi-toolchain.git
 
@@ -54,6 +53,20 @@ cd build
 cmake .. -DCMAKE_INSTALL_PREFIX=~/workspace/mic/
 
 make -j4 install
+
+```
+
+## Documentation
+In order to generate the "living" code documentation:
+
+
+```
+
+cd ~/workspace/mi-toolchain
+
+doxygen mi-toolchain.doxyget
+
+firefox html/index.thml
 
 ```
 
