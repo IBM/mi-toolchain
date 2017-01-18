@@ -69,8 +69,14 @@ public:
 	void registerPropertyTree(mic::configuration::PropertyTree* pt_);
 
 
+	/*!
+	 * Returns program options.
+	 */
 	boost::program_options::options_description &getProgramOptions();
 
+	/*!
+	 * Returns program arguments.
+	 */
 	const boost::program_options::variables_map &getProgramArguments();
 
 	/*!
