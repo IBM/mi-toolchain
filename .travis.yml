@@ -1,3 +1,9 @@
+os: linux
+dist: trusty
+sudo: required
+language: cpp
+compiler: gcc
+
 # This will run on Travis' 'new' container-based infrastructure
 sudo: false
 
@@ -17,15 +23,22 @@ env:
 addons:
   apt:
     packages:
+      - libboost-all-dev
+      - libopenblas-dev
       - doxygen
       - doxygen-doc
       - doxygen-latex
       - doxygen-gui
       - graphviz
 
+#before_script:
+#  - mkdir build
+#  - cd build
+#  - cmake ..
+
 # Build your code e.g. by calling make
 #script:
-#  - make
+#  - make -j8 install
 
 # Generate and deploy documentation
 after_success:
