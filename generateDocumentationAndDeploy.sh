@@ -71,6 +71,8 @@ echo "" > .nojekyll
 ##### Generate the Doxygen code documentation and log the output.          #####
 echo 'Generating Doxygen code documentation...'
 # Redirect both stderr and stdout to the log file AND the console.
+cd $TRAVIS_BUILD_DIR
+mv html/* code_docs\$GH_REPO_NAME
 doxygen $DOXYFILE 2>&1 | tee doxygen.log
 
 ################################################################################
@@ -94,7 +96,7 @@ if [ -d "html" ] && [ -f "html/index.html" ]; then
     # Force push to the remote gh-pages branch.
     # The ouput is redirected to /dev/null to hide any sensitive credential data
     # that might otherwise be exposed.
-    git push --force "https://${GH_REPO_TOKEN}@${GH_REPO_REF}" > /dev/null 2>&1
+    git push git@$GH_REPO_REF origin gh-pages --force > /dev/null 2>&1
 else
     echo '' >&2
     echo 'Warning: No documentation (html) files have been found!' >&2
