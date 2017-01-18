@@ -64,9 +64,8 @@ std::string getCPUInfo (void) {
             return delUnnecessary (info);
         }//: if
     }//: while
-#else
-    return std::string ("missing cpu name");
 #endif
+    return std::string ("missing cpu name");
 }
 
 std::string getCurrentTimeInfo (void) {
