@@ -24,6 +24,7 @@ env:
 matrix:
   exclude:
     - env: TRAVIS_4681_WORKAROUND=1
+
   include:
     - compiler: gcc
       addons:
@@ -59,9 +60,9 @@ matrix:
         - CXX=g++-5
         - OS=Ubuntu-14.04
 
-    - env:
-        - CXX=clang++-3.6
+    - env: compiler: clang++-3.6
         - OS=Ubuntu-14.04
+        - CXX=clang++-3.6
       addons: &clang36
         apt:
           packages:
@@ -71,7 +72,7 @@ matrix:
             - ubuntu-toolchain-r-test
             - llvm-toolchain-precise-3.6
 
-    - compiler: clang
+    - compiler: clang++-3.7
       addons:
         apt:
 #          sources:
@@ -81,8 +82,8 @@ matrix:
             - libboost-all-dev
             - clang-3.7
       env:
-        - CXX=clang++-3.7
         - OS=Ubuntu-14.04
+        - CXX=clang++-3.7
 
 # Configure cmake and prepare installation dir.
 before_script:
