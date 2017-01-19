@@ -71,11 +71,8 @@ firefox html/index.thml
 
 Aside of that, the most current documentation can be accessed at:
 
-```
-
 https://pages.github.ibm.com/tkornut/mi-toolchain/
 
-```
 
 ## Maintainer
 
