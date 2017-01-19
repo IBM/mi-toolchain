@@ -87,6 +87,7 @@ before_script:
 
 # Build and install.
 script:
-  - echo $COMPILER
-  - make CXX=$COMPILER install
+  # Overwrite compiler!
+  - if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; fi
+  - make install VERBOSE=1
 
