@@ -27,13 +27,13 @@ matrix:
     - env: TRAVIS_4681_WORKAROUND=1
 
   include:
-    # 1. Ubuntu 14.04 g++-4.9
+    # 1. Ubuntu 14.04 g++-4.8
     - os: linux
       dist: trusty
-      compiler: gcc
+      compiler: g++-4.8
       env:
         - OS=Ubuntu-14.04
-        - COMPILER=g++-4.9
+        - COMPILER=g++-4.8
       addons:
         apt:
 #          sources:
@@ -88,6 +88,7 @@ before_script:
 # Build and install.
 script:
   # Overwrite compiler!
+  - g++ --version
   - if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; fi
-  - make install VERBOSE=1
+  - make CXX=${COMPILER} install VERBOSE=1
 
