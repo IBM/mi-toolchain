@@ -8,17 +8,6 @@ compiler:
   - gcc
   - clang
 
-# Define matrix to a combination of two distributions/compilers.
-matrix:
-  include:
-    - os: linux
-      dist: trusty
-      sudo: required
-      compiler: gcc
-    - os: osx
-      osx_image: xcode8.2
-      compiler: clang
-
 # This will run on Travis' 'new' container-based infrastructure
 # https://docs.travis-ci.com/user/migrating-from-legacy/#How-can-I-use-container-based-infrastructure%3F
 #sudo: false
@@ -34,13 +23,22 @@ env:
     - GH_REPO_NAME: mi-toolchain
     - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
     - GH_REPO_REF: github.ibm.com:tkornut/mi-toolchain.git
+  # Define matrix to a combination of two distributions/compilers.
+  matrix:
+    include:
+      - os: linux
+        dist: trusty
+        sudo: required
+        compiler: gcc
+      - os: osx
+        osx_image: xcode8.2
+        compiler: clang
 
 # Install dependencies
 addons:
   apt:
     packages:
       - libboost-all-dev
-      - libopenblas-dev
       - doxygen
       - doxygen-doc
       - doxygen-latex
