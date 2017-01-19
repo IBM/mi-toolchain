@@ -11,11 +11,12 @@ A subproject of Machine Intelligence Core, being the real "core" of the framewor
 Contains tools required for development of MIC-based applications, such as configuration management, loggers, application state etc.
 
 ## MIC dependencies
+
    * none
 
 ## External dependencies
 
-Additionally it depends on the following external libraries:
+Toolchain depends on the following external libraries:
    * Boost - a library of free (open source) peer-reviewed portable C++ source libraries.
 
 ### Installing the dependencies/required tools
@@ -23,7 +24,6 @@ Additionally it depends on the following external libraries:
 On Linux (Ubuntu 14.04): 
 
     sudo apt-get install git cmake cmake-curses-gui doxygen libboost1.54-all-dev
-
 
 ## Main modules
 
@@ -38,41 +38,24 @@ On Linux (Ubuntu 14.04):
 ## Installation
 In order to download, configure, make and install new "clean" version of mi-toolchain please execute the following:
 
-```
-
-cd ~/workspace
-
-git clone git@github.ibm.com:tkornut/mi-toolchain.git
-
-cd mi-toolchain
-
-mkdir build
-
-cd build
-
-cmake .. -DCMAKE_INSTALL_PREFIX=~/workspace/mic/
-
-make -j4 install
-
-```
+    cd ~/workspace
+    git clone git@github.ibm.com:tkornut/mi-toolchain.git
+    cd mi-toolchain
+    mkdir build
+    cd build
+    cmake .. -DCMAKE_INSTALL_PREFIX=~/workspace/mic/
+    make -j4 install
 
 ## Documentation
 In order to generate a "living" documentation of the code please run Doxygen:
 
-```
+    cd ~/workspace/mi-toolchain
+    doxygen mi-toolchain.doxyfile
+    firefox html/index.html
 
-cd ~/workspace/mi-toolchain
-
-doxygen mi-toolchain.doxyget
-
-firefox html/index.thml
-
-```
-
-The current documentation (generated straight from the code and automatically uploaded ti GH pages by Travis) is available at:
+The current documentation (generated straight from the code and automatically uploaded to GH pages by Travis) is available at:
 
 https://pages.github.ibm.com/tkornut/mi-toolchain/
-
 
 ## Maintainer
 
