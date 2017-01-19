@@ -58,17 +58,19 @@ matrix:
       env:
         - CXX=g++-5
         - OS=Ubuntu-14.04
-    - addons: &clang36
+
+    - env:
+        - CXX=clang++-3.6
+        - OS=Ubuntu-14.04
+      addons: &clang36
         apt:
-#          sources:
-#            - ubuntu-toolchain-r-test
-#            - llvm-toolchain-precise-3.6
           packages:
             - libboost-all-dev
             - clang-3.6
-      env:
-        - CXX=clang++-3.6
-        - OS=Ubuntu-14.04
+          sources: &sources
+            - ubuntu-toolchain-r-test
+            - llvm-toolchain-precise-3.6
+
     - compiler: clang
       addons:
         apt:
