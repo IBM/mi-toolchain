@@ -2,6 +2,7 @@
 matrix:
   include:
     - compiler: gcc
+      language: cpp
       os: linux
       dist: trusty
       addons:
@@ -17,6 +18,7 @@ matrix:
         - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
         - GH_REPO_REF: github.ibm.com:tkornut/mi-toolchain.git
     - compiler: clang
+      language: cpp
       os: linux
       dist: trusty
       addons:
@@ -33,7 +35,6 @@ matrix:
         - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
         - GH_REPO_REF: github.ibm.com:tkornut/mi-toolchain.git
 
-language: cpp
 #sudo: required
 
 # This will run on Travis' 'new' container-based infrastructure
