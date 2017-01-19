@@ -87,5 +87,6 @@ before_script:
 
 # Build and install.
 script:
+  - echo $COMPILER
   - make CXX=$COMPILER install
 
