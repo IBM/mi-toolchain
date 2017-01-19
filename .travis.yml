@@ -53,16 +53,16 @@ matrix:
       - chmod +x generateDocumentationAndDeploy.sh
       - ./generateDocumentationAndDeploy.sh
 
-   # 2. OS X 10.11 clang++
-    - os: osx
-      osx_image: xcode8.0
-      compiler: clang
-      env:
-        - OS=OSX-10.11
-        - COMPILER=clang++
-      addons:
-        apt:
-          packages: ['libboost-all-dev']
+#   # 2. OS X 10.11 clang++ - doesn't work - cannot switch to OSX!
+#    - os: osx
+#      osx_image: xcode8.0
+#      compiler: clang
+#      env:
+#        - OS=OSX-10.11
+#        - COMPILER=clang++
+#      addons:
+#        apt:
+#          packages: ['libboost-all-dev']
 
    # 3. Ubuntu 14.04 clang++
     - os: linux
@@ -76,7 +76,7 @@ matrix:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.5']
           packages: ['libboost-all-dev']
 
-#   # 4. Ubuntu 14.04 clang-3.8 - not supporting openMP
+#   # 4. Ubuntu 14.04 clang-3.8 - doesn't work - not supporting openMP
 #    - os: linux
 #      compiler: clang++
 #      addons:
