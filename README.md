@@ -39,28 +39,42 @@ On Linux (Ubuntu 14.04):
 In order to download, configure, make and install new "clean" version of mi-toolchain please execute the following:
 
 ```
+
 cd ~/workspace
+
 git clone git@github.ibm.com:tkornut/mi-toolchain.git
+
 cd mi-toolchain
+
 mkdir build
+
 cd build
+
 cmake .. -DCMAKE_INSTALL_PREFIX=~/workspace/mic/
+
 make -j4 install
+
 ```
 
 ## Documentation
 In order to generate a "living" documentation of the code please run Doxygen:
 
 ```
+
 cd ~/workspace/mi-toolchain
+
 doxygen mi-toolchain.doxyget
+
 firefox html/index.thml
+
 ```
 
 Aside of that, the most current documentation can be accessed at:
 
 ```
-https://github.ibm.com/tkornut/mi-toolchain/tree/gh-pages
+
+https://pages.github.ibm.com/tkornut/mi-toolchain/
+
 ```
 
 ## Maintainer
