@@ -1,5 +1,5 @@
 # Project name
-project(MIToolchain CXX)
+project(MIToolchain CXX C)
 
 #  Set current version number.
 set (MIToolchain_MAJOR_VERSION 1)
