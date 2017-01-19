@@ -34,9 +34,6 @@ matrix:
       env:
         - OS=OSX-10.12
         - COMPILER=clang++
-      addons:
-        apt:
-          packages: ['libboost-all-dev']
 
     # 1. Ubuntu 14.04 g++-4.8
     - os: linux
