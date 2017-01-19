@@ -55,10 +55,10 @@ matrix:
 
    # 2. OS X 10.11 clang++
     - os: osx
-      osx_image: xcode8
+      osx_image: xcode8.0
       compiler: clang
       env:
-        - OS=OSX-10.12
+        - OS=OSX-10.11
         - COMPILER=clang++
       addons:
         apt:
