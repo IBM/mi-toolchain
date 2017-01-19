@@ -32,6 +32,7 @@ matrix:
 #          sources:
 #            - ubuntu-toolchain-r-test
           packages:
+            - libboost-all-dev
             - g++-4.9
             - doxygen
             - doxygen-doc
@@ -46,12 +47,14 @@ matrix:
       - cd $TRAVIS_BUILD_DIR
       - chmod +x generateDocumentationAndDeploy.sh
       - ./generateDocumentationAndDeploy.sh
+
     - compiler: gcc
       addons:
         apt:
 #          sources:
 #            - ubuntu-toolchain-r-test
           packages:
+            - libboost-all-dev
             - g++-5
       env:
         - COMPILER=g++-5
@@ -63,6 +66,7 @@ matrix:
 #            - ubuntu-toolchain-r-test
 #            - llvm-toolchain-precise-3.6
           packages:
+            - libboost-all-dev
             - clang-3.6
       env:
         - COMPILER=clang++-3.6
@@ -74,16 +78,11 @@ matrix:
 #            - ubuntu-toolchain-r-test
 #            - llvm-toolchain-precise-3.7
           packages:
+            - libboost-all-dev
             - clang-3.7
       env:
         - COMPILER=clang++-3.7
         - OS=Ubuntu 14.04
-
-# Install "common" dependencies
-addons:
-  apt:
-    packages:
-      - libboost-all-dev
 
 # Configure cmake and prepare installation dir.
 before_script:
