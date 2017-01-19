@@ -1,6 +1,4 @@
 language: cpp
-os: linux
-dist: trusty
 
 # This will run on Travis' 'new' container-based infrastructure
 # https://docs.travis-ci.com/user/migrating-from-legacy/#How-can-I-use-container-based-infrastructure%3F
@@ -29,9 +27,11 @@ matrix:
   include:
     # 1. Ubuntu 14.04 g++-4.9
     - env:
-        - CXX=g++-4.9
+        - COMPILER=g++-4.9
         - OS=Ubuntu-14.04
-      compiler: g++-4.9
+     os: linux
+     dist: trusty
+     compiler: g++-4.9
       addons:
         apt:
 #          sources:
@@ -51,24 +51,22 @@ matrix:
       - ./generateDocumentationAndDeploy.sh
 
     # 2. Ubuntu 14.04 g++-5
-    - compiler: g++-5
+    - os: linux
+      dist: trusty
+      compiler: gcc
       addons:
         apt:
-          sources: &sources
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.6
-          packages:
-            - libboost-all-dev
-            - g++-5
-      env:
-        - CXX=g++-5
-        - OS=Ubuntu-14.04
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-4.9', 'libboost-all-dev']
+      env: COMPILER=g++-4.9
 
     # 3. Ubuntu 14.04 clang++-3.6
-    - env:
+    - os: linux
+      dist: trusty
+      compiler: clang++-3.6
+      env:
         - OS=Ubuntu-14.04
         - CXX=clang++-3.6
-      compiler: clang++-3.6
       addons:
         apt:
           packages:
@@ -76,10 +74,12 @@ matrix:
             - clang-3.6
 
     # 4. Ubuntu 14.04 clang++-3.7
-    - env:
+    - os: linux
+      dist: trusty
+      compiler: clang++-3.7
+      env:
         - OS=Ubuntu-14.04
         - CXX=clang++-3.7
-      compiler: clang++-3.7
       addons:
         apt:
           packages:
