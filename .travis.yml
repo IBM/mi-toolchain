@@ -53,24 +53,35 @@ matrix:
       - chmod +x generateDocumentationAndDeploy.sh
       - ./generateDocumentationAndDeploy.sh
 
-   # 2. Ubuntu 14.04 clang
+   # 2. OS X 10.12 clang++
+    - os: osx
+      osx_image: xcode8.2
+      compiler: clang
+      env:
+        - OS=OSX-10.12
+        - COMPILER=clang++
+      addons:
+        apt:
+          packages: ['libboost-all-dev']
+
+   # 3. Ubuntu 14.04 clang++
     - os: linux
       dist: trusty
       compiler: clang
       env:
         - OS=Ubuntu-14.04
-        - COMPILER=clang
+        - COMPILER=clang++
       addons:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.5']
           packages: ['libboost-all-dev']
 
-#   # 3. Ubuntu 14.04 clang-3.8 - nie supporting openMP
+#   # 4. Ubuntu 14.04 clang-3.8 - not supporting openMP
 #    - os: linux
-#      compiler: clang
+#      compiler: clang++
 #      addons:
 #        apt:
-#          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.6']
+#          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.8']
 #          packages: ['clang-3.8', 'libboost-all-dev']
 #      env: COMPILER=clang++-3.8
 
