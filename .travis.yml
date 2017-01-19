@@ -37,7 +37,7 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - libboost-all-dev
-            - g++-4.9
+            - g++-4.8
             - doxygen
             - doxygen-doc
             - doxygen-latex
