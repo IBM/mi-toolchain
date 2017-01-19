@@ -69,7 +69,7 @@ firefox html/index.thml
 
 ```
 
-Aside of that, the most current documentation can be accessed at:
+The current documentation (generated straight from the code and automatically uploaded ti GH pages by Travis) is available at:
 
 https://pages.github.ibm.com/tkornut/mi-toolchain/
 
