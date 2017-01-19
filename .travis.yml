@@ -27,6 +27,17 @@ matrix:
     - env: TRAVIS_4681_WORKAROUND=1
 
   include:
+   # 2. OS X 10.12 clang++
+    - os: osx
+      osx_image: xcode8.2
+      compiler: clang
+      env:
+        - OS=OSX-10.12
+        - COMPILER=clang++
+      addons:
+        apt:
+          packages: ['libboost-all-dev']
+
     # 1. Ubuntu 14.04 g++-4.8
     - os: linux
       dist: trusty
@@ -52,17 +63,6 @@ matrix:
       - cd $TRAVIS_BUILD_DIR
       - chmod +x generateDocumentationAndDeploy.sh
       - ./generateDocumentationAndDeploy.sh
-
-   # 2. OS X 10.12 clang++
-    - os: osx
-      osx_image: xcode8.2
-      compiler: clang
-      env:
-        - OS=OSX-10.12
-        - COMPILER=clang++
-      addons:
-        apt:
-          packages: ['libboost-all-dev']
 
    # 3. Ubuntu 14.04 clang++
     - os: linux
