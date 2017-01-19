@@ -84,14 +84,11 @@ before_script:
   - mkdir $TRAVIS_BUILD_DIR/../mic/
   - mkdir build
   - cd build
-  - cmake .. -DCMAKE_INSTALL_PREFIX=$TRAVIS_BUILD_DIR/../mic/
+  # Overwrite compiler!
+#  - if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; fi
+  - cmake .. -DCXX=${COMPILER} -DCMAKE_INSTALL_PREFIX=$TRAVIS_BUILD_DIR/../mic/
 
 # Build and install.
 script:
-  # Overwrite compiler!
-  - g++ --version
-  - echo ${COMPILER}
-  - if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; fi
-  - echo ${CXX}
   - make CXX=${COMPILER} install VERBOSE=1
 
