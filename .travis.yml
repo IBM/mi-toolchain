@@ -53,31 +53,28 @@ matrix:
       - chmod +x generateDocumentationAndDeploy.sh
       - ./generateDocumentationAndDeploy.sh
 
-   # 2. Ubuntu 14.04 clang-3.5
+   # 2. Ubuntu 14.04 clang
     - os: linux
       dist: trusty
       compiler: clang
       env:
         - OS=Ubuntu-14.04
-        - COMPILER=clang-3.5
+        - COMPILER=clang
       addons:
         apt:
-          packages:
-            - libboost-all-dev
-            - clang-3.5
+          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.5']
+          packages: ['libboost-all-dev']
 
-    # 3. Ubuntu 14.04 clang-3.8
-    - os: linux
-      dist: trusty
-      compiler: clang
-      env:
-        - OS=Ubuntu-14.04
-        - COMPILER=clang-3.8
-      addons:
-        apt:
-          packages:
-            - libboost-all-dev
-            - clang-3.8
+#   # 3. Ubuntu 14.04 clang-3.8 - nie supporting openMP
+#    - os: linux
+#      compiler: clang
+#      addons:
+#        apt:
+#          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.6']
+#          packages: ['clang-3.8', 'libboost-all-dev']
+#      env: COMPILER=clang++-3.8
+
+
 
 # Configure cmake and prepare installation dir.
 before_script:
@@ -90,5 +87,5 @@ before_script:
 
 # Build and install.
 script:
-  - make CXX=${COMPILER} install VERBOSE=1
+  - make install VERBOSE=1
 
