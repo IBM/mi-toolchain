@@ -1,6 +1,4 @@
 language: cpp
-os: linux
-dist: trusty
 sudo: required
 
 compiler:
@@ -20,6 +18,8 @@ branches:
 matrix:
   include:
     - compiler: gcc
+      os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -33,6 +33,8 @@ matrix:
         - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
         - GH_REPO_REF: github.ibm.com:tkornut/mi-toolchain.git
     - compiler: clang
+      os: linux
+      dist: trusty
       addons:
         apt:
           sources:
@@ -53,7 +55,7 @@ matrix:
 #  apt:
 #    packages:
 #      - libboost-all-dev
-#      - doxygen
+#      - doxygen 
 #      - doxygen-doc
 #      - doxygen-latex
 #      - doxygen-gui
