@@ -90,6 +90,8 @@ before_script:
 script:
   # Overwrite compiler!
   - g++ --version
+  - echo ${COMPILER}
   - if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; fi
+  - echo ${CXX}
   - make CXX=${COMPILER} install VERBOSE=1
 
