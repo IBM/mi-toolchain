@@ -1,4 +1,4 @@
-language: c++
+language: cpp c
 
 # This will run on Travis' 'new' container-based infrastructure
 # https://docs.travis-ci.com/user/migrating-from-legacy/#How-can-I-use-container-based-infrastructure%3F
