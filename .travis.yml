@@ -56,10 +56,9 @@ matrix:
             - libboost-all-dev
             - g++-5
       env:
-        - COMPILER=g++-5
+        - CXX=g++-5
         - OS=Ubuntu-14.04
-    - compiler: clang
-      addons:
+    - addons: &clang36
         apt:
 #          sources:
 #            - ubuntu-toolchain-r-test
