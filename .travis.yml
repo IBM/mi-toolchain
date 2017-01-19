@@ -1,15 +1,3 @@
-language: cpp
-#sudo: required
-
-# This will run on Travis' 'new' container-based infrastructure
-# https://docs.travis-ci.com/user/migrating-from-legacy/#How-can-I-use-container-based-infrastructure%3F
-#sudo: false
-
-# Safelist: focus Travis' attention on the master branch.
-branches:
-  only:
-    - master
-
 # Define matrix to a combination of two distributions/compilers.
 matrix:
   include:
@@ -44,6 +32,18 @@ matrix:
         - GH_REPO_NAME: mi-toolchain
         - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
         - GH_REPO_REF: github.ibm.com:tkornut/mi-toolchain.git
+
+language: cpp
+#sudo: required
+
+# This will run on Travis' 'new' container-based infrastructure
+# https://docs.travis-ci.com/user/migrating-from-legacy/#How-can-I-use-container-based-infrastructure%3F
+#sudo: false
+
+# Safelist: focus Travis' attention on the master branch.
+branches:
+  only:
+    - master
 
 
 # Install dependencies
