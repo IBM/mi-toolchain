@@ -11,6 +11,10 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-4.9
+      # Safelist: focus Travis' attention on the master branch.
+      branches:
+        only:
+        - master
       env:
         - OS=Ubuntu 14.04
         - COMPILER=g++-4.9
@@ -28,6 +32,10 @@ matrix:
             - llvm-toolchain-precise-3.6
           packages:
             - clang-3.6
+      # Safelist: focus Travis' attention on the master branch.
+      branches:
+        only:
+        - master
       env:
         - OS=Ubuntu 14.04
         - COMPILER=clang++-3.6
@@ -40,11 +48,6 @@ matrix:
 # This will run on Travis' 'new' container-based infrastructure
 # https://docs.travis-ci.com/user/migrating-from-legacy/#How-can-I-use-container-based-infrastructure%3F
 #sudo: false
-
-# Safelist: focus Travis' attention on the master branch.
-branches:
-  only:
-    - master
 
 
 # Install dependencies
