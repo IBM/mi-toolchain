@@ -30,14 +30,11 @@ matrix:
     # 1. Ubuntu 14.04 g++-4.8
     - os: linux
       dist: trusty
-      compiler: g++-4.8
-      env:
-        - OS=Ubuntu-14.04
-        - COMPILER=g++-4.8
+      compiler: gcc
       addons:
         apt:
-#          sources:
-#            - ubuntu-toolchain-r-test
+          sources:
+            - ubuntu-toolchain-r-test
           packages:
             - libboost-all-dev
             - g++-4.9
@@ -46,6 +43,10 @@ matrix:
             - doxygen-latex
             - doxygen-gui
             - graphviz
+      env:
+        - OS=Ubuntu-14.04
+        - COMPILER=g++-4.8
+
       # Generate and deploy documentation - only once, for this test environment.
       after_success:
       - cd $TRAVIS_BUILD_DIR
@@ -55,7 +56,7 @@ matrix:
    # 2. Ubuntu 14.04 clang-3.5
     - os: linux
       dist: trusty
-      compiler: clang-3.5
+      compiler: clang
       env:
         - OS=Ubuntu-14.04
         - COMPILER=clang-3.5
@@ -68,7 +69,7 @@ matrix:
     # 3. Ubuntu 14.04 clang-3.8
     - os: linux
       dist: trusty
-      compiler: clang-3.8
+      compiler: clang
       env:
         - OS=Ubuntu-14.04
         - COMPILER=clang-3.8
