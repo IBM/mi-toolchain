@@ -1,8 +1,7 @@
 language: cpp
-
-os:
-  - linux
-#  - osx
+os: linux
+dist: trusty
+sudo: required
 
 compiler:
   - gcc
@@ -17,24 +16,7 @@ branches:
   only:
     - master
 
-# Environment variables
-env:
-  global:
-    - GH_REPO_NAME: mi-toolchain
-    - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
-    - GH_REPO_REF: github.ibm.com:tkornut/mi-toolchain.git
-  # Define matrix to a combination of two distributions/compilers.
-#  matrix:
-#    include:
-#      - os: linux
-#        dist: trusty
-#        sudo: required
-#        compiler: gcc
-#      - os: osx
-#        osx_image: xcode8.2
-#        compiler: clang
-#
-
+# Define matrix to a combination of two distributions/compilers.
 matrix:
   include:
     - compiler: gcc
@@ -44,15 +26,12 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - g++-4.9
-      env: COMPILER=g++-4.9
-    - compiler: gcc
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - g++-5
-      env: COMPILER=g++-5
+      env:
+        - OS=Ubuntu 14.04
+        - COMPILER=g++-4.9
+        - GH_REPO_NAME: mi-toolchain
+        - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
+        - GH_REPO_REF: github.ibm.com:tkornut/mi-toolchain.git
     - compiler: clang
       addons:
         apt:
@@ -61,42 +40,39 @@ matrix:
             - llvm-toolchain-precise-3.6
           packages:
             - clang-3.6
-      env: COMPILER=clang++-3.6
-    - compiler: clang
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.7
-          packages:
-            - clang-3.7
-      env: COMPILER=clang++-3.7
+      env:
+        - OS=Ubuntu 14.04
+        - COMPILER=clang++-3.6
+        - GH_REPO_NAME: mi-toolchain
+        - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
+        - GH_REPO_REF: github.ibm.com:tkornut/mi-toolchain.git
+
 
 # Install dependencies
-addons:
-  apt:
-    packages:
-      - libboost-all-dev
-      - doxygen
-      - doxygen-doc
-      - doxygen-latex
-      - doxygen-gui
-      - graphviz
+#addons:
+#  apt:
+#    packages:
+#      - libboost-all-dev
+#      - doxygen
+#      - doxygen-doc
+#      - doxygen-latex
+#      - doxygen-gui
+#      - graphviz
 
 # Configure cmake and prepare installation dir.
-before_script:
-  - mkdir $TRAVIS_BUILD_DIR/../mic/
-  - mkdir build
-  - cd build
-  - cmake .. -DCMAKE_INSTALL_PREFIX=$TRAVIS_BUILD_DIR/../mic/
+#before_script:
+#  - mkdir $TRAVIS_BUILD_DIR/../mic/
+#  - mkdir build
+#  - cd build
+#  - cmake .. -DCMAKE_INSTALL_PREFIX=$TRAVIS_BUILD_DIR/../mic/
 
 # Build and install.
-script:
-  - make install
+#script:
+#  - make install
 
 # Generate and deploy documentation
-after_success:
-  - cd $TRAVIS_BUILD_DIR
-  - chmod +x generateDocumentationAndDeploy.sh
-  - ./generateDocumentationAndDeploy.sh
+#after_success:
+#  - cd $TRAVIS_BUILD_DIR
+#  - chmod +x generateDocumentationAndDeploy.sh
+#  - ./generateDocumentationAndDeploy.sh
 
