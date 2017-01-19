@@ -1,5 +1,4 @@
 language: cpp c
-os: osx
 
 # This will run on Travis' 'new' container-based infrastructure
 # https://docs.travis-ci.com/user/migrating-from-legacy/#How-can-I-use-container-based-infrastructure%3F
@@ -24,8 +23,8 @@ env:
 # Define matrix of test environments.
 matrix:
   # Travis workaround - disable "main" test environment.
-#  exclude:
-#    - env: TRAVIS_4681_WORKAROUND=1
+  exclude:
+    - env: TRAVIS_4681_WORKAROUND=1
 
   include:
     # 1. Ubuntu 14.04 g++-4.8
