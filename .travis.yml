@@ -29,8 +29,7 @@ before_script:
 
 # Build and install.
 script:
-  - make install
-
+  - make CXX=$COMPILER install
 
 
 # Define matrix of test environments.
@@ -43,10 +42,10 @@ matrix:
     # 1. Ubuntu 14.04 g++-4.9
     - os: linux
       dist: trusty
-      compiler: g++-4.9
+      compiler: gcc
       env:
-        - COMPILER=g++-4.9
         - OS=Ubuntu-14.04
+        - COMPILER=g++-4.9
       addons:
         apt:
 #          sources:
@@ -71,7 +70,7 @@ matrix:
       compiler: clang-3.5
       env:
         - OS=Ubuntu-14.04
-        - CXX=clang-3.5
+        - COMPILER=clang-3.5
       addons:
         apt:
           packages:
@@ -83,8 +82,8 @@ matrix:
       dist: trusty
       compiler: clang-3.8
       env:
-        - COMPILER=clang-3.8
         - OS=Ubuntu-14.04
+        - COMPILER=clang-3.8
       addons:
         apt:
           packages:
