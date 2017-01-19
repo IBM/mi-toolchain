@@ -1,7 +1,7 @@
 language: cpp
 os: linux
 dist: trusty
-sudo: required
+#sudo: required
 
 # This will run on Travis' 'new' container-based infrastructure
 # https://docs.travis-ci.com/user/migrating-from-legacy/#How-can-I-use-container-based-infrastructure%3F
@@ -29,13 +29,19 @@ matrix:
     - compiler: gcc
       addons:
         apt:
-          sources:
-            - ubuntu-toolchain-r-test
+#          sources:
+#            - ubuntu-toolchain-r-test
           packages:
             - g++-4.9
+            - doxygen
+            - doxygen-doc
+            - doxygen-latex
+            - doxygen-gui
+            - graphviz
       env:
         - COMPILER=g++-4.9
-      # Generate and deploy documentation
+        - OS=Ubuntu 14.04
+      # Generate and deploy documentation - only once, for this test environment.
       after_success:
       - cd $TRAVIS_BUILD_DIR
       - chmod +x generateDocumentationAndDeploy.sh
@@ -43,43 +49,41 @@ matrix:
     - compiler: gcc
       addons:
         apt:
-          sources:
-            - ubuntu-toolchain-r-test
+#          sources:
+#            - ubuntu-toolchain-r-test
           packages:
             - g++-5
       env:
         - COMPILER=g++-5
+        - OS=Ubuntu 14.04
     - compiler: clang
       addons:
         apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.6
+#          sources:
+#            - ubuntu-toolchain-r-test
+#            - llvm-toolchain-precise-3.6
           packages:
             - clang-3.6
       env:
         - COMPILER=clang++-3.6
+        - OS=Ubuntu 14.04
     - compiler: clang
       addons:
         apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.7
+#          sources:
+#            - ubuntu-toolchain-r-test
+#            - llvm-toolchain-precise-3.7
           packages:
             - clang-3.7
       env:
         - COMPILER=clang++-3.7
+        - OS=Ubuntu 14.04
 
-# Install dependencies
+# Install "common" dependencies
 addons:
   apt:
     packages:
       - libboost-all-dev
-      - doxygen
-      - doxygen-doc
-      - doxygen-latex
-      - doxygen-gui
-      - graphviz
 
 # Configure cmake and prepare installation dir.
 before_script:
