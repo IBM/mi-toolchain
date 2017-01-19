@@ -1,44 +1,10 @@
 matrix:
   include:
     - compiler: gcc
-      language: cpp
-      os: linux
-      dist: trusty
       addons:
         apt:
           sources:
             - ubuntu-toolchain-r-test
           packages:
             - g++-4.9
-      # Safelist: focus Travis' attention on the master branch.
-      branches:
-        only:
-        - master
-      env:
-        - OS=Ubuntu 14.04
-        - COMPILER=g++-4.9
-        - GH_REPO_NAME: mi-toolchain
-        - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
-        - GH_REPO_REF: github.ibm.com:tkornut/mi-toolchain.git
-    - compiler: clang
-      language: cpp
-      os: linux
-      dist: trusty
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-            - llvm-toolchain-precise-3.6
-          packages:
-            - clang-3.6
-      # Safelist: focus Travis' attention on the master branch.
-      branches:
-        only:
-        - master
-      env:
-        - OS=Ubuntu 14.04
-        - COMPILER=clang++-3.6
-        - GH_REPO_NAME: mi-toolchain
-        - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
-        - GH_REPO_REF: github.ibm.com:tkornut/mi-toolchain.git
-
+      env: COMPILER=g++-4.9
