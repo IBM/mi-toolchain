@@ -59,6 +59,7 @@ https://pages.github.ibm.com/tkornut/mi-toolchain/
 
 ## Maintainer
 
-tkornuta
+Tomasz Kornuta
+tkornut@us.ibm.com
 
 
