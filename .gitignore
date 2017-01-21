@@ -31,8 +31,10 @@
 .DS_Store
 
 # Build & documentation directories
+code_docs/*
 build/*
 html/*
 latex/*
 data/*
 /nbproject
+
