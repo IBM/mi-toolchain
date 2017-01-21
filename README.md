@@ -36,6 +36,7 @@ On Linux (Ubuntu 14.04):
    * logger_test - application for testing console logger.
 
 ## Installation
+
 In order to download, configure, make and install new "clean" version of mi-toolchain please execute the following:
 
     cd ~/workspace
@@ -47,6 +48,7 @@ In order to download, configure, make and install new "clean" version of mi-tool
     make -j4 install
 
 ## Documentation
+
 In order to generate a "living" documentation of the code please run Doxygen:
 
     cd ~/workspace/mi-toolchain
