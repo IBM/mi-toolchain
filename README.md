@@ -19,16 +19,16 @@ Contains tools required for development of MIC-based applications, such as confi
 Toolchain depends on the following external libraries:
    * Boost - a library of free (open source) peer-reviewed portable C++ source libraries.
 
-### Installing the dependencies/required tools
+### Installation of the dependencies/required tools
 
 On Linux (Ubuntu 14.04): 
 
-    sudo apt-get install git cmake cmake-curses-gui doxygen libboost1.54-all-dev
+    sudo apt-get install git cmake cmake-curses-gui doxygen libboost1.54-all-dev libeigen3-dev
 
 ## Main modules
 
-   * application - classes related for management of applications, their state, keyhandlers as well application factories. 
-   * configuration - classes responsible for configuration managenemt (parameters server, property tree etc.) 
+   * application - classes related for management of applications, their state, key-handlers as well application factories. 
+   * configuration - classes responsible for configuration management (parameters server, property tree etc.) 
    * logger - classess and functions related to logger 
 
 ## Applications

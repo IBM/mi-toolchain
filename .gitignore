@@ -27,6 +27,9 @@
 *.out
 *.app
 
+# Temporary files
+*~
+
 # MAC files
 .DS_Store
 

@@ -54,9 +54,9 @@ SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 set(MIToolchain_LIBRARIES "" CACHE INTERNAL "" FORCE)
 
 # Set include directory
-set(CMAKE_INCLUDE_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/include")
+set(CMAKE_INCLUDE_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/include ${CMAKE_ADD_INCLUDE_PATH}")
 # Set lib directory
-set(CMAKE_LIB_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/lib")
+set(CMAKE_LIB_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/lib ${CMAKE_ADD_LIB_PATH}")
 # Set variable that will store generated libraries
 
 # =======================================================================
