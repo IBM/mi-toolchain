@@ -48,6 +48,18 @@ void PropertyTree::printProperties() {
 	}//: foreach
 }
 
+void PropertyTree::printPropertiesWithValues() {
+	// Check if there are any properties.
+	if (properties.empty()){
+		LOG(LINFO) << "Object \""<< node_name << "\": no properties";
+		return;
+	}//: if
+
+	LOG(LINFO) << "Object \""<< node_name << "\":";
+	BOOST_FOREACH(PropertyPair prop, properties) {
+		LOG(LINFO) << "\t  \"" << prop.first << "\" = " << prop.second->getValue();
+	}//: foreach
+}
 
 PropertyInterface * PropertyTree::getProperty(const std::string& name) {
 	if (properties.count(name) > 0) {

@@ -193,6 +193,14 @@ void ParameterServer::loadPropertiesFromConfiguration() {
     }//: for
 
     LOG(LINFO) << "Configuration completed";
+	LOG(LSTATUS) << "List of application properties:";
+
+	// For each registered property tree.
+	for (id_pt_it_t reg_it = property_trees_registry.begin(); reg_it != property_trees_registry.end(); ++reg_it) {
+		reg_it->second->printPropertiesWithValues();
+	}//: for
+
+	LOG(LINFO) << "Property-dependent variables initialized";
 }
 
 void ParameterServer::initializePropertyDependentVariables() {
@@ -208,6 +216,7 @@ void ParameterServer::initializePropertyDependentVariables() {
 
     LOG(LINFO) << "Property-dependent variables initialized";
 }
+
 
 boost::program_options::options_description &ParameterServer::getProgramOptions() {
 	return program_options;

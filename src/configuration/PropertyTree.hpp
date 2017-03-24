@@ -55,6 +55,11 @@ public:
 	void printProperties();
 
 	/*!
+	 * Prints the list of all registered properties along with their values.
+	 */
+	void printPropertiesWithValues();
+
+	/*!
 	 * Returns property with specified name if registered or NULL otherwise.
 	 * \param name Property name.
 	 * \returns Pointer to a property with specified name or NULL if no such a property is registered.
