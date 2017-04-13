@@ -50,8 +50,10 @@ SET(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 # =======================================================================
 # Cmake configuration
 # =======================================================================
-# Create the cached variable for sstoring all library names.
+# Create the cached variable for storing all library names.
 set(MIToolchain_LIBRARIES "" CACHE INTERNAL "" FORCE)
+
+add_subdirectory(src)
 
 # Set include directory
 set(CMAKE_INCLUDE_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/include ${CMAKE_ADD_INCLUDE_PATH}")
@@ -59,13 +61,7 @@ set(CMAKE_INCLUDE_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/include ${CMAKE_ADD_
 set(CMAKE_LIB_DIRS_CONFIGCMAKE "${CMAKE_INSTALL_PREFIX}/lib ${CMAKE_ADD_LIB_PATH}")
 # Set variable that will store generated libraries
 
-# =======================================================================
-# Add subdirectories
-# =======================================================================
-
-add_subdirectory(src)
-
-message ("-- Configured MIToolchain libraries:\n" "--   " "${MIToolchain_LIBRARIES}")
+message ("-- Configured MI Toolchain libraries:\n" "--   " "${MIToolchain_LIBRARIES}")
 
 # =======================================================================
 # Preparation of cmake configs

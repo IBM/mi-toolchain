@@ -1,19 +1,22 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="true" context="org.eclipse.cdt.ui.text.codetemplates.constructorcomment_context" deleted="false" description="Comment for created constructors" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.constructorcomment" name="constructorcomment">/*
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="org.eclipse.cdt.ui.text.codetemplates.constructorcomment_context" deleted="false" description="Comment for created constructors" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.constructorcomment" name="constructorcomment">/*!
+ * \brief
+ */</template><template autoinsert="false" context="org.eclipse.cdt.ui.text.codetemplates.destructorcomment_context" deleted="false" description="Comment for created destructors" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.destructorcomment" name="destructorcomment">/*!
+ * \brief
+ */</template><template autoinsert="false" context="org.eclipse.cdt.ui.text.codetemplates.filecomment_context" deleted="false" description="Comment for created C/C++ files" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.filecomment" name="filecomment">/*!
+ * @file: ${file_name}
+ * @Author: Tomasz Kornuta &lt;tkornut@us.ibm.com&gt;
+ * @Date:   ${date}
  *
- */</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.codetemplates.destructorcomment_context" deleted="false" description="Comment for created destructors" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.destructorcomment" name="destructorcomment">/*
+ * Copyright (c) 2017, Tomasz Kornuta, IBM Corporation. All rights reserved.
  *
- */</template><template autoinsert="false" context="org.eclipse.cdt.ui.text.codetemplates.filecomment_context" deleted="false" description="Comment for created C/C++ files" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.filecomment" name="filecomment">/*
- * \file ${file_name}
- * \brief 
- * \author: ${user}
- * \date ${date}
  */
-</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.codetemplates.typecomment_context" deleted="false" description="Comment for created classes" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.typecomment" name="typecomment">/*
- *
- */</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.codetemplates.fieldcomment_context" deleted="false" description="Comment for fields" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.fieldcomment" name="fieldcomment">/*
- *
- */</template><template autoinsert="true" context="org.eclipse.cdt.ui.text.codetemplates.methodcomment_context" deleted="false" description="Comment for methods" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.methodcomment" name="methodcomment">/*
- *
+</template><template autoinsert="false" context="org.eclipse.cdt.ui.text.codetemplates.typecomment_context" deleted="false" description="Comment for created classes" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.typecomment" name="typecomment">/*!
+ * \brief
+ * \author tkornuta
+ */</template><template autoinsert="false" context="org.eclipse.cdt.ui.text.codetemplates.fieldcomment_context" deleted="false" description="Comment for fields" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.fieldcomment" name="fieldcomment">/*!
+ * \brief
+ */</template><template autoinsert="false" context="org.eclipse.cdt.ui.text.codetemplates.methodcomment_context" deleted="false" description="Comment for methods" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.methodcomment" name="methodcomment">/*!
+ * \brief
  */</template><template autoinsert="true" context="org.eclipse.cdt.core.cxxSource.contenttype_context" deleted="false" description="Default template for newly created C++ source files" enabled="true" id="org.eclipse.cdt.ui.text.codetemplates.cppsourcefile" name="Default C++ source template">${filecomment}
 ${includes}
 
