@@ -23,8 +23,8 @@ extraction:
         - mkdir build
         - cd build
         - cmake .. -DCMAKE_INSTALL_PREFIX=../mic/
-    build_command:
-        - make .. 
+    #build_command:
+    #    - make .. 
     #index:
     #  exclude:
     #    - .git
