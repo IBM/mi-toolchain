@@ -62,10 +62,10 @@ jobs:
       env:
         - OS=Ubuntu-14.04
         - COMPILER=g++-5
-        - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
-      before_install:
-          - eval "${MATRIX_EVAL}"      
-      script: ./build.sh
+      script: 
+        - export CC=gcc-5
+        - export CXX=g++-5
+        - ./build.sh
 
 
     # 2. Ubuntu 14.04 clang++
@@ -99,15 +99,15 @@ jobs:
       compiler: gcc
       env:
         - OS="macOS 10.13 gcc"
-        - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"      
       addons:
         homebrew:
           packages:   
             - boost  
-            - gcc
-      before_install:
-          - eval "${MATRIX_EVAL}"      
-      script: ./build.sh 
+            - gcc-4.9
+      script:
+        - export CC=gcc-4.9
+        - export CXX=g++-4.9
+        - ./build.sh 
 
     # 5. Deploy
     - stage: "Deploy: GitHub Pages"
