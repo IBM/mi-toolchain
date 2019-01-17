@@ -18,13 +18,12 @@ extraction:
   cpp:
     configure:
       command: 
-        - pwd
-        - mkdir ../mic
+        - mkdir mic
         - mkdir build
         - cd build
-        - cmake .. -DCMAKE_INSTALL_PREFIX=../mic/
+        - cmake .. -DCMAKE_INSTALL_PREFIX=mic/
     #build_command:
-    #    - make .. 
+    #    - make -j4
     #index:
     #  exclude:
     #    - .git
