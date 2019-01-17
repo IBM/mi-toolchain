@@ -14,16 +14,16 @@
 
 # lgtm.yml configuration file for C/C++ analysis
 
-extraction:
-  cpp:
-    configure:
-      command: 
-        - mkdir mic
-        - mkdir build
-        - cd build
-        - cmake .. -DCMAKE_INSTALL_PREFIX=mic/
-    build_command:
-        - make install
+#extraction:
+  #cpp:
+    #configure:
+    #  command: 
+    #    - mkdir mic
+    #    - mkdir build
+    #    - cd build
+    #    - cmake .. -DCMAKE_INSTALL_PREFIX=mic/
+    #build_command:
+    #    - make -j4
     #index:
     #  exclude:
     #    - .git
