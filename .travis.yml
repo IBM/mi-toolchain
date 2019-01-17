@@ -61,6 +61,16 @@ jobs:
           packages: ['libboost-all-dev']
       script: ./build.sh 
 
+    # 3. OSX.
+    - os: osx
+      osx_image: xcode10.1
+      env:
+        - OS="macOS 10.13"
+    addons:
+      homebrew:
+        packages:   
+          - boost     
+
     - stage: "Deploy: GitHub Pages"
       addons:
         apt:
