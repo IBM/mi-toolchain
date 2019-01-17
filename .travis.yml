@@ -98,18 +98,18 @@ jobs:
     - os: osx
       osx_image: xcode10.1
       before_install:
-        - brew install gcc-4.9 && CC=gcc-4.9 && CXX=g++-4.9
+        - brew install gcc-5 && CC=gcc-5 && CXX=g++-5
       compiler: gcc
       env:
         - OS=macOS 10.13
-        - COMPILER=g++-4.9
-        - CC=gcc-4.9
-        - CXX=g++-4.9
+        - COMPILER=g++-5
+        - CC=gcc-5
+        - CXX=g++-5
       addons:
         homebrew:
           packages:   
             - boost  
-            - gcc-4.9
+            #- gcc-4.9
       script:
         - ./build.sh 
 
