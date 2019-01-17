@@ -48,6 +48,26 @@ jobs:
         - COMPILER=g++-4.8
       script: ./build.sh
 
+    # 2. Ubuntu 14.04 g++5
+    - os: linux
+      dist: trusty
+      compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - libboost-all-dev
+            - g++-5
+      env:
+        - OS=Ubuntu-14.04
+        - COMPILER=g++-5
+        - MATRIX_EVAL="CC=gcc-5 && CXX=g++-5"
+      before_install:
+          - eval "${MATRIX_EVAL}"      
+      script: ./build.sh
+
+
     # 2. Ubuntu 14.04 clang++
     - os: linux
       dist: trusty
@@ -85,6 +105,8 @@ jobs:
           packages:   
             - boost  
             - gcc
+      before_install:
+          - eval "${MATRIX_EVAL}"      
       script: ./build.sh 
 
     # 5. Deploy
