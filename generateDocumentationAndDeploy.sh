@@ -57,7 +57,7 @@ rm -rf *
 # Set the push default to simple i.e. push only the current branch.
 git config --global push.default simple
 # Pretend to be an user called Travis CI.
-git config user.name "Tomasz Kornuta"
+git config user.name "tkornut"
 git config user.email "tkornut@us.ibm.com"
 
 # Need to create a .nojekyll file to allow filenames starting with an underscore
