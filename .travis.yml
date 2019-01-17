@@ -64,15 +64,30 @@ jobs:
     # 3. OSX.
     - os: osx
       osx_image: xcode10.1
+      compiler: clang
       env:
-        - OS="macOS 10.13"
-      compiler: gcc
+        - OS="macOS 10.13 clang"
       addons:
         homebrew:
           packages:   
-            - boost     
+            - boost  
       script: ./build.sh 
 
+    # 4. OSX.
+    - os: osx
+      osx_image: xcode10.1
+      compiler: gcc
+      env:
+        - OS="macOS 10.13 gcc"
+        - MATRIX_EVAL="CC=gcc-4.9 && CXX=g++-4.9"      
+      addons:
+        homebrew:
+          packages:   
+            - boost  
+            - gcc
+      script: ./build.sh 
+
+    # 5. Deploy
     - stage: "Deploy: GitHub Pages"
       addons:
         apt:
