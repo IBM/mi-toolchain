@@ -36,6 +36,7 @@ stages:
 # Define matrix of build environments.
 jobs:
   include:
+    - stage: Compilation
     # 1. Ubuntu 14.04 g++-4.8
     - os: linux
       dist: trusty
@@ -47,26 +48,10 @@ jobs:
           packages:
             - libboost-all-dev
             - g++-4.8
-            - doxygen
-            - doxygen-doc
-            - graphviz
       env:
         - OS=Ubuntu-14.04
         - COMPILER=g++-4.8
       script: build.sh
-
-    - stage: GitHub Release
-      # Deploy using travis builtin GitHub Pages support
-      deploy:
-        script: 
-          - cd $TRAVIS_BUILD_DIR
-          - doxygen mi-toolchain.doxyfile
-        provider: pages
-        skip_cleanup: true
-        local_dir: $TRAVIS_BUILD_DIR/html
-        github_token: $GITHUB_TOKEN
-        on:
-          branch: master
 
    # 2. Ubuntu 14.04 clang++
     - os: linux
@@ -80,5 +65,28 @@ jobs:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.5']
           packages: ['libboost-all-dev']
       script: build.sh 
+
+    - stage: GitHub Pages Release
+      os: linux
+      dist: trusty
+      addons:
+        apt:
+          packages:
+            - doxygen
+            - doxygen-doc
+            - graphviz
+      env:
+        - OS=Ubuntu-14.04
+      # Deploy using travis builtin GitHub Pages support
+      deploy:
+        script: 
+          - cd $TRAVIS_BUILD_DIR
+          - doxygen mi-toolchain.doxyfile
+        provider: pages
+        skip_cleanup: true
+        local_dir: $TRAVIS_BUILD_DIR/html
+        github_token: $GITHUB_TOKEN
+        on:
+          branch: master
 
 
