@@ -12,33 +12,73 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+language: cpp c
+
+# This will run on Travis' 'new' container-based infrastructure
+# https://docs.travis-ci.com/user/migrating-from-legacy/#How-can-I-use-container-based-infrastructure%3F
+# 
+# Additionally, first job will build documentation using doxygen and deploy it to gh pages. 
+# https://gist.github.com/vidavidorra/548ffbcdae99d752da02
+
 # This will run on Travis' 'new' container-based infrastructure
 sudo: false
 
-# Blacklist
+# Safelist: focus Travis' attention on the master branch.
 branches:
   only:
     - master
 
-# Install dependencies
-addons:
-  apt:
-    packages:
-      - doxygen
-      - doxygen-doc
-      - doxygen-latex
-      - doxygen-gui
-      - graphviz
+# Define stages.
+stages:
+  - compile
+  - deploy
 
-# Build your code e.g. by calling make
-script:
-  - doxygen mi-toolchain.doxyfile
+# Define matrix of build environments.
+jobs:
+  include:
+    # 1. Ubuntu 14.04 g++-4.8
+    - os: linux
+      dist: trusty
+      compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - libboost-all-dev
+            - g++-4.8
+            - doxygen
+            - doxygen-doc
+            - graphviz
+      env:
+        - OS=Ubuntu-14.04
+        - COMPILER=g++-4.8
+      script: build.sh
 
-# Deploy using travis builtin GitHub Pages support
-deploy:
-  provider: pages
-  skip_cleanup: true
-  local_dir: $TRAVIS_BUILD_DIR/html
-  github_token: $GITHUB_TOKEN
-  on:
-    branch: master
+    - stage: GitHub Release
+      # Deploy using travis builtin GitHub Pages support
+      deploy:
+        script: 
+          - cd $TRAVIS_BUILD_DIR
+          - doxygen mi-toolchain.doxyfile
+        provider: pages
+        skip_cleanup: true
+        local_dir: $TRAVIS_BUILD_DIR/html
+        github_token: $GITHUB_TOKEN
+        on:
+          branch: master
+
+   # 2. Ubuntu 14.04 clang++
+    - os: linux
+      dist: trusty
+      compiler: clang
+      env:
+        - OS=Ubuntu-14.04
+        - COMPILER=clang++
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.5']
+          packages: ['libboost-all-dev']
+      script: build.sh 
+
+
