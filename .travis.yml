@@ -66,6 +66,7 @@ jobs:
       osx_image: xcode10.1
       env:
         - OS="macOS 10.13"
+      compiler: gcc
       addons:
         homebrew:
           packages:   
