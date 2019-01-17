@@ -31,80 +31,19 @@ branches:
 # Define matrix of build environments.
 jobs:
   include:
-    # 1. Ubuntu 14.04 g++-4.8
-    - stage: "Compilation"
-      os: linux
-      dist: trusty
-      compiler: gcc
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - libboost-all-dev
-            - g++-4.8
-      env:
-        - OS=Ubuntu-14.04
-        - COMPILER=g++-4.8
-      script: ./build.sh
 
-    # 2. Ubuntu 14.04 g++5
-    - os: linux
-      dist: trusty
-      compiler: gcc
-      addons:
-        apt:
-          sources:
-            - ubuntu-toolchain-r-test
-          packages:
-            - libboost-all-dev
-            - g++-5
-      env:
-        - OS=Ubuntu-14.04
-        - COMPILER=g++-5
-        - CC=gcc-5
-        - CXX=g++-5
-      script: 
-        - ./build.sh
-
-
-    # 3. Ubuntu 14.04 clang++
-    - os: linux
-      dist: trusty
-      compiler: clang
-      env:
-        - OS=Ubuntu-14.04
-        - COMPILER=clang++
-      addons:
-        apt:
-          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.5']
-          packages: ['libboost-all-dev']
-      script: ./build.sh 
-
-    # 4. OSX clang
-    - os: osx
-      osx_image: xcode10.1
-      compiler: clang
-      env:
-        - OS=MacOS 10.13
-        - COMPILER=clang++
-      addons:
-        homebrew:
-          packages:   
-            - boost  
-      script: ./build.sh 
 
     # 5. OSX gcc 4.9
     - os: osx
       osx_image: xcode10.1
       before_install:
-        - brew install gcc-5 && CC=gcc-5 && CXX=g++-5
+        - brew install gcc@4.9 && CC=gcc-4.9 && CXX=g++-4.9
       compiler: gcc
       env:
         - OS=macOS 10.13
-        - COMPILER=g++-5
-        - CC=gcc-5
-        - CXX=g++-5
+        - COMPILER=g++-4.9
+        - CC=gcc-4.9
+        - CXX=g++-4.9
       addons:
         homebrew:
           packages:   
