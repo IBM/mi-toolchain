@@ -2,7 +2,7 @@
 
 Status of Travis Continuous Integration:
 
-[![Build Status](https://travis.ibm.com/tkornut/mi-toolchain.svg?token=9XHfj7QaSbmFqHsyaQes&branch=master)](https://travis.ibm.com/tkornut/mi-toolchain)
+[![Build Status](https://travis-ci.com/IBM/mi-toolchain.svg?branch=master)](https://travis-ci.com/IBM/mi-toolchain)
 
 ## Description
 
