@@ -31,6 +31,35 @@ branches:
 # Define matrix of build environments.
 jobs:
   include:
+    # 1. Ubuntu 14.04 g++-4.8
+    - stage: "Compilation"
+      os: linux
+      dist: trusty
+      compiler: gcc
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - libboost-all-dev
+            - g++-4.8
+      env:
+        - OS=Ubuntu-14.04
+        - COMPILER=g++-4.8
+      script: ./build.sh
+
+    # 2. Ubuntu 14.04 clang++
+    - os: linux
+      dist: trusty
+      compiler: clang
+      env:
+        - OS=Ubuntu-14.04
+        - COMPILER=clang++
+      addons:
+        apt:
+          sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.5']
+          packages: ['libboost-all-dev']
+      script: ./build.sh 
 
     - stage: "Deploy: GitHub Pages"
       addons:
