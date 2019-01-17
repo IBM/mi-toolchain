@@ -41,11 +41,11 @@ jobs:
             - doxygen-latex
             - doxygen-gui
             - graphviz
+      script: 
+        - doxygen mi-toolchain.doxyfile
 
       # Deploy using travis builtin GitHub Pages support
       deploy:
-        script: 
-          - doxygen mi-toolchain.doxyfile
         provider: pages
         skip_cleanup: true
         local_dir: $TRAVIS_BUILD_DIR/html
