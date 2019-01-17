@@ -22,8 +22,8 @@ extraction:
         - mkdir build
         - cd build
         - cmake .. -DCMAKE_INSTALL_PREFIX=mic/
-    #build_command:
-    #    - make -j4
+    build_command:
+        - make install
     #index:
     #  exclude:
     #    - .git
