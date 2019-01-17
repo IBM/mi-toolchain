@@ -21,9 +21,6 @@ extraction:
         - mkdir build
         - cd build
         - cmake ..
-    build:
-      command:
-        - make -j4 
     index:
       exclude:
         - .git
