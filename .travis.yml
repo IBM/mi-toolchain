@@ -16,6 +16,9 @@ language: cpp c
 
 # This will run on Travis' 'new' container-based infrastructure
 # https://docs.travis-ci.com/user/migrating-from-legacy/#How-can-I-use-container-based-infrastructure%3F
+# 
+# Addiitionally, first job will build documentation using doxygen and deploy it to gh pages. 
+# https://gist.github.com/vidavidorra/548ffbcdae99d752da02
 sudo: false
 
 # Safelist: focus Travis' attention on the master branch.
@@ -62,10 +65,10 @@ matrix:
         - COMPILER=g++-4.8
 
       # Generate and deploy documentation - only once, for this test environment.
-      #after_success:
-      #- cd $TRAVIS_BUILD_DIR
-      #- chmod +x generateDocumentationAndDeploy.sh
-      #- ./generateDocumentationAndDeploy.sh
+      after_success:
+      - cd $TRAVIS_BUILD_DIR
+      - chmod +x generateDocumentationAndDeploy.sh
+      - ./generateDocumentationAndDeploy.sh
 
 #   # 2. OS X 10.11 clang++ - doesn't work - cannot switch to OSX!
 #    - os: osx
