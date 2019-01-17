@@ -40,7 +40,7 @@ On Linux (Ubuntu 14.04):
 In order to download, configure, make and install new "clean" version of mi-toolchain please execute the following:
 
     cd ~/workspace
-    git clone git@github.ibm.com:tkornut/mi-toolchain.git
+    git clone git@github.com:ibm/mi-toolchain.git
     cd mi-toolchain
     mkdir build
     cd build
@@ -57,7 +57,7 @@ In order to generate a "living" documentation of the code please run Doxygen:
 
 The current documentation (generated straight from the code and automatically uploaded to GH pages by Travis) is available at:
 
-https://pages.github.ibm.com/tkornut/mi-toolchain/
+https://ibm.github.io/mi-toolchain/
 
 ## Maintainer
 
