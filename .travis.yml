@@ -66,10 +66,10 @@ jobs:
       osx_image: xcode10.1
       env:
         - OS="macOS 10.13"
-    addons:
-      homebrew:
-        packages:   
-          - boost     
+      addons:
+        homebrew:
+          packages:   
+            - boost     
 
     - stage: "Deploy: GitHub Pages"
       addons:
