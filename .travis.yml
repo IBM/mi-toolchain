@@ -36,7 +36,6 @@ stages:
 # Define matrix of build environments.
 jobs:
   include:
-    - stage: Compilation
     # 1. Ubuntu 14.04 g++-4.8
     - os: linux
       dist: trusty
@@ -51,7 +50,7 @@ jobs:
       env:
         - OS=Ubuntu-14.04
         - COMPILER=g++-4.8
-      script: build.sh
+      script: skip # ./build.sh
 
    # 2. Ubuntu 14.04 clang++
     - os: linux
@@ -64,7 +63,7 @@ jobs:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.5']
           packages: ['libboost-all-dev']
-      script: build.sh 
+      script: skip #./build.sh 
 
     - stage: GitHub Pages Release
       os: linux
