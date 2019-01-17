@@ -31,7 +31,7 @@ env:
   global:
     - GH_REPO_NAME: mi-toolchain
     - DOXYFILE: $TRAVIS_BUILD_DIR/mi-toolchain.doxyfile
-    - GH_REPO_REF: github.com/ibm/mi-toolchain.git
+    - GH_REPO_REF: github.com:ibm/mi-toolchain.git
   matrix:
    # Workaround for https://github.com/travis-ci/travis-ci/issues/4681
    - TRAVIS_4681_WORKAROUND=1
