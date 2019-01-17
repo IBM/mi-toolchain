@@ -29,15 +29,15 @@
 #include <cstdio>
 #include <sstream>
 
-namespace mic {
-namespace logger {
-
 #include <iostream>
 
 #if defined(WIN32)
 #	define WIN32_LEAN_AND_MEAN
 #	include <windows.h>
 #endif
+
+namespace mic {
+namespace logger {
 
 /*!
  * Set console font color to blue.
