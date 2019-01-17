@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-language: cpp c
+language: cpp
 
 # This will run on Travis' 'new' container-based infrastructure
 # https://docs.travis-ci.com/user/migrating-from-legacy/#How-can-I-use-container-based-infrastructure%3F
@@ -97,6 +97,8 @@ jobs:
     # 5. OSX gcc 4.9
     - os: osx
       osx_image: xcode10.1
+      before_install:
+        - brew install gcc-4.9 && CC=gcc-4.9 && CXX=g++-4.9
       compiler: gcc
       env:
         - OS=macOS 10.13
