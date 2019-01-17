@@ -24,7 +24,7 @@ extraction:
         - cd build
         - cmake ..
     build_command:
-        - make .. -DCMAKE_INSTALL_PREFIX=../mic/
+        - "make .. -DCMAKE_INSTALL_PREFIX=../mic/"
     #index:
     #  exclude:
     #    - .git
