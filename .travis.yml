@@ -32,18 +32,16 @@ branches:
 jobs:
   include:
 
-
-    - stage: GitHub Pages Release
-      os: linux
-      dist: trusty
+    - stage: "Deploy: GitHub Pages"
       addons:
         apt:
           packages:
             - doxygen
             - doxygen-doc
+            - doxygen-latex
+            - doxygen-gui
             - graphviz
-      env:
-        - OS=Ubuntu-14.04
+
       # Deploy using travis builtin GitHub Pages support
       deploy:
         script: 
