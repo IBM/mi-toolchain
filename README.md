@@ -1,8 +1,8 @@
 # Machine Intelligence Core: Toolchain
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-blue.svg)
-[![Build Status](https://travis-ci.com/IBM/mi-toolchain.svg?branch=master)](https://travis-ci.com/IBM/mi-toolchain)
 [![GitHub license](https://img.shields.io/github/license/IBM/mi-toolchain.svg)](https://github.com/IBM/mi-toolchain/blob/master/LICENSE)
+[![Build Status](https://travis-ci.com/IBM/mi-toolchain.svg?branch=master)](https://travis-ci.com/IBM/mi-toolchain)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/IBM/mi-toolchain.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IBM/mi-toolchain/alerts/)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/IBM/mi-toolchain.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IBM/mi-toolchain/context:cpp)
 
