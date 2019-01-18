@@ -26,7 +26,6 @@ if(${BUILD_TEST_LOGGER})
 	ADD_EXECUTABLE(logger_test logger_test.cpp)
 	# Link it with shared libraries.
 	target_link_libraries(logger_test 
-		configuration
 		logger
 		${Boost_LIBRARIES}
 		)

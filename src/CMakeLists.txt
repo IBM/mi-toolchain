@@ -26,9 +26,9 @@ include_directories(BEFORE ${CMAKE_CURRENT_SOURCE_DIR})
 
 add_subdirectory(logger)
 
-add_subdirectory(configuration)
+#add_subdirectory(configuration)
 
-add_subdirectory(application)
+#add_subdirectory(application)
 
 add_subdirectory(test)
 
