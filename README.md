@@ -1,5 +1,8 @@
 # Machine Intelligence Core: Toolchain
 
+Inline-style: 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
 [!Language](https://img.shields.io/badge/language-C%2B%2B-blue.svg)
 [![Build Status](https://travis-ci.com/IBM/mi-toolchain.svg?branch=master)](https://travis-ci.com/IBM/mi-toolchain)
 [![GitHub license](https://img.shields.io/github/license/IBM/mi-toolchain.svg)](https://github.com/IBM/mi-toolchain/blob/master/LICENSE)
