@@ -113,9 +113,9 @@ namespace mic {
         key_handler_map.insert(std::make_pair((char) (key_), std::make_pair((description_), boost::bind(function_, obj_))));
       }
 
-      void registerKeyhandler(KeyHandler kh_) {
+      /*void registerKeyhandler(KeyHandler kh_) {
 
-      }
+      }*/
 
       std::string changeInputMode(unsigned char finishKey_);
       bool extendedInputMode;
