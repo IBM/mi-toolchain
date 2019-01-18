@@ -108,7 +108,7 @@ public:
 	void RegisterFactory()
 	{
 		if (internal_factory != nullptr)
-			throw new std::runtime_error("Application factory: internal factory already existing! Possible reason: multiple REGISTER_APPLICATION macro calls.");
+			throw std::runtime_error("Application factory: internal factory already existing! Possible reason: multiple REGISTER_APPLICATION macro calls.");
 	   internal_factory = new TemplateFactory<AppType> ;
 	}
 
@@ -121,7 +121,7 @@ public:
 		if (internal_factory != nullptr)
 			return internal_factory->create(app_name_);
 		else
-			throw new std::runtime_error("Application factory: internal factory not existing! Possible reason: Macro REGISTER_APPLICATION was not called.");
+			throw std::runtime_error("Application factory: internal factory not existing! Possible reason: Macro REGISTER_APPLICATION was not called.");
    }
 
 private:
