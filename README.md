@@ -1,4 +1,4 @@
-#Machine Intelligence Core: Toolchain
+# Machine Intelligence Core: Toolchain
 
 [![Build Status](https://travis-ci.com/IBM/mi-toolchain.svg?branch=master)](https://travis-ci.com/IBM/mi-toolchain)
 [![GitHub license](https://img.shields.io/github/license/IBM/mi-toolchain.svg)](https://github.com/IBM/mi-toolchain/blob/master/LICENSE)
@@ -30,7 +30,7 @@ On Linux (Ubuntu 14.04):
 
    * application - classes related for management of applications, their state, key-handlers as well application factories. 
    * configuration - classes responsible for configuration management (parameters server, property tree etc.) 
-   * logger - classess and functions related to logger 
+   * logger - classes and functions related to logger 
 
 ## Applications
 
