@@ -80,7 +80,7 @@ jobs:
         - COMPILER=g++-5
         - CC=gcc-5
         - CXX=g++-5
-     before_script:
+      before_script:
         - mkdir mic
       script:
         - ./scripts/build.sh
@@ -97,7 +97,10 @@ jobs:
         apt:
           sources: ['ubuntu-toolchain-r-test', 'llvm-toolchain-precise-3.5']
           packages: ['libboost-all-dev']
-      script: ./build.sh 
+      before_script:
+        - mkdir mic
+      script:
+        - ./scripts/build.sh
 
     # 4. OSX clang
     - os: osx
@@ -110,7 +113,7 @@ jobs:
         homebrew:
           packages:   
             - boost  
-     before_script:
+      before_script:
         - mkdir mic
       script:
         - ./scripts/build.sh
@@ -129,8 +132,10 @@ jobs:
     #      packages:   
     #        - boost  
     #        - gcc@4.9
+    #  before_script:
+    #    - mkdir mic
     #  script:
-    #    - ./build.sh 
+    #    - ./scripts/build.sh
 
     # 5. Deploy
     - stage: "Deploy: GitHub Pages"
