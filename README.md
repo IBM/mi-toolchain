@@ -2,6 +2,7 @@
 
 ![Language](https://img.shields.io/badge/language-C%2B%2B-blue.svg)
 [![GitHub license](https://img.shields.io/github/license/IBM/mi-toolchain.svg)](https://github.com/IBM/mi-toolchain/blob/master/LICENSE)
+![](https://img.shields.io/github/release/IBM/mi-toolchain.svg)
 [![Build Status](https://travis-ci.com/IBM/mi-toolchain.svg?branch=master)](https://travis-ci.com/IBM/mi-toolchain)
 [![Language grade: C/C++](https://img.shields.io/lgtm/grade/cpp/g/IBM/mi-toolchain.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IBM/mi-toolchain/context:cpp)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/IBM/mi-toolchain.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/IBM/mi-toolchain/alerts/)
@@ -57,7 +58,7 @@ In order to generate a "living" documentation of the code please run Doxygen:
     doxygen mi-toolchain.doxyfile
     firefox html/index.html
 
-The current documentation (generated straight from the code and automatically uploaded to GH pages by Travis) is available at:
+The current documentation (generated straight from the code and automatically uploaded to github pages by Travis) is available at:
 
 https://ibm.github.io/mi-toolchain/
 

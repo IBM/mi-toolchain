@@ -173,9 +173,9 @@ public:
 	 * @param value_ New value to be set.
 	 * @return Current value
 	 */
-	T operator=(T const & value_) {
+	Property<T>& operator=(T const & value_) {
 		property_value = value_;
-		return property_value;
+		return *this;
 	}
 
 	/*!
