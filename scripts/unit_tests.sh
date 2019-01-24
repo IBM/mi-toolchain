@@ -1,3 +1,4 @@
+#!/bin/bash
 # Copyright (C) tkornuta, IBM Corporation 2015-2019
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,12 +13,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Configure cmake and prepare installation dir.
-mkdir $TRAVIS_BUILD_DIR/../mic/
-mkdir build
+# Assumes that:
+# - ROOT_DIR is the root of the project. 
+# - ROOT_DIR/exists/ exists.
+# - script is executed in ROOT_DIR (starts and ends in that dir).
+
+# Stop the script on first error.
+set -e
+
+# Run unit tests in build directory.
 cd build
-# Overwrite compiler!
-if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; fi
-cmake .. -DCMAKE_INSTALL_PREFIX=$TRAVIS_BUILD_DIR/../mic/
-# Build and install.
-make install VERBOSE=1
+ctest
+cd ..

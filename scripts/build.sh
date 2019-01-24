@@ -1,3 +1,4 @@
+#!/bin/bash
 # Copyright (C) tkornuta, IBM Corporation 2015-2019
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,14 +13,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# lgtm.yml configuration file for C/C++ analysis
+# Assumes that:
+# - ROOT_DIR is the root of the project. 
+# - ROOT_DIR/mic/ exists.
+# - script is executed in ROOT_DIR (starts and ends in that dir).
 
-extraction:
-  cpp:
-    configure:
-      command:
-        - mkdir mic
+# Stop the script on first error.
+set -e
 
-    index:
-        build_command:
-          - ./scripts/build.sh
+# Configure cmake and prepare installation dir.
+mkdir build
+cd build
+# Overwrite compiler!
+if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; fi
+cmake .. -DCMAKE_INSTALL_PREFIX=../mic/
+# Build and install.
+make install VERBOSE=1
+cd ..

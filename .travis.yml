@@ -31,7 +31,7 @@ branches:
 # Define matrix of build environments.
 jobs:
   include:
-    # 1. Ubuntu 14.04 g++-4.8
+    # 1. Ubuntu 14.04 g++-4.8 + unit tests
     - stage: "Compilation"
       os: linux
       dist: trusty
@@ -46,7 +46,23 @@ jobs:
       env:
         - OS=Ubuntu-14.04
         - COMPILER=g++-4.8
-      script: ./build.sh
+        - TESTS="Unit Tests with GTest"
+     before_script:
+        # Install GTest.
+        - git clone https://github.com/google/googletest.git
+        - cd googletest
+        - mkdir gbuild && cd gbuild && cmake .. && make && cd ..
+        - sudo cp -r googletest/include/gtest /usr/local/include
+        - sudo cp -r googlemock/include/gmock /usr/local/include
+        - sudo cp gbuild/lib/lib*.a /usr/local/lib
+        - cd ..
+        # Make mic dir.
+        - mkdir mic
+      script:
+        - ./scripts/build.sh
+      after_script:
+        - ./scripts/unit_tests.sh
+
 
     # 2. Ubuntu 14.04 g++5
     - os: linux
@@ -64,8 +80,10 @@ jobs:
         - COMPILER=g++-5
         - CC=gcc-5
         - CXX=g++-5
-      script: 
-        - ./build.sh
+     before_script:
+        - mkdir mic
+      script:
+        - ./scripts/build.sh
 
 
     # 3. Ubuntu 14.04 clang++
@@ -92,9 +110,12 @@ jobs:
         homebrew:
           packages:   
             - boost  
-      script: ./build.sh 
+     before_script:
+        - mkdir mic
+      script:
+        - ./scripts/build.sh
 
-    # 5. OSX gcc 4.9
+    # 5. OSX gcc 4.9 (NOT WORKING: TRAVIS IS NOT CHANGING THE COMPILER)
     #- os: osx
     #  osx_image: xcode10.1
     #  compiler: gcc
