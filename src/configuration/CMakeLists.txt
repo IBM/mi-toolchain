@@ -23,7 +23,7 @@ FILE(GLOB files *.hpp)
 install(FILES ${files} DESTINATION include/configuration)
   
 # Create shared library containing CONFIGURATION used by all other libraries.
-file(GLOB configuration_src *.cpp)
+file(GLOB configuration_src ParameterServer.cpp Property.cpp PropertyTree.cpp )
 add_library(configuration SHARED ${configuration_src})
 target_link_libraries(configuration ${Boost_LIBRARIES} logger )
 
@@ -32,3 +32,27 @@ set(MIToolchain_LIBRARIES ${MIToolchain_LIBRARIES} "configuration" CACHE INTERNA
 
 # Install target library.
 install(TARGETS configuration LIBRARY DESTINATION lib ARCHIVE DESTINATION lib RUNTIME DESTINATION bin)
+
+
+# =======================================================================
+# Build Property tests
+# =======================================================================
+
+# Link tests with GTest
+if(GTEST_FOUND AND BUILD_UNIT_TESTS)
+
+	add_executable(unit_tests_property PropertyTests.cpp)
+	target_link_libraries(unit_tests_property
+        configuration
+		${GTEST_LIBRARIES}
+		${Boost_LIBRARIES}
+		${CMAKE_THREAD_LIBS_INIT}
+		)
+		
+	add_test(unit_tests_property ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/unit_tests_property)
+
+	install(TARGETS unit_tests_property LIBRARY DESTINATION lib ARCHIVE DESTINATION lib RUNTIME DESTINATION bin)
+
+endif(GTEST_FOUND AND BUILD_UNIT_TESTS)
+
+

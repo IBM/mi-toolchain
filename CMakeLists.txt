@@ -45,6 +45,20 @@ find_package(Boost 1.54 REQUIRED COMPONENTS system thread random program_options
 # Try to include Boost as system directory to suppress it's warnings
 include_directories(SYSTEM ${Boost_INCLUDE_DIR})
 
+# Locate GTest
+find_package(GTest)
+
+if(NOT GTEST_FOUND)
+    message(WARNING "--   GTest not found!")
+else(NOT GTEST_FOUND)
+	include_directories(${GTEST_INCLUDE_DIRS})
+	# This must be set in the root directory for the tests to be run by 'make test' or ctest.
+	enable_testing()
+endif(NOT GTEST_FOUND)
+
+# Add additional option to cmake.
+set(BUILD_UNIT_TESTS ON CACHE BOOL "Build unit tests.")
+
 # =======================================================================
 # RPATH settings
 # =======================================================================
