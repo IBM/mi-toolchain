@@ -41,7 +41,7 @@ TEST(Property, OperatorAssignString) {
 
 	ASSERT_EQ(s1.size(), s2.size()) << "Strings s1 and s2 are of unequal length";
 
-	for (int i = 0; i < s1.size(); ++i)
+	for (size_t i = 0; i < s1.size(); ++i)
 		EXPECT_EQ(s1[i], s2[i]) << "Strings s1 and s2 differ at index " << i;
 }
 
