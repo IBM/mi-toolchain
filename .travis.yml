@@ -21,7 +21,7 @@ language: cpp
 # https://gist.github.com/vidavidorra/548ffbcdae99d752da02
 
 # This will run on Travis' 'new' container-based infrastructure
-sudo: false
+#sudo: false
 
 # Safelist: focus Travis' attention on the master branch.
 branches:
