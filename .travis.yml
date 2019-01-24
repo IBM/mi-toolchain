@@ -47,7 +47,7 @@ jobs:
         - OS=Ubuntu-14.04
         - COMPILER=g++-4.8
         - TESTS="Unit Tests with GTest"
-     before_script:
+      before_script:
         # Install GTest.
         - git clone https://github.com/google/googletest.git
         - cd googletest
