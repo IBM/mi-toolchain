@@ -57,7 +57,7 @@ public:
 	 * Returns node name.
 	 * @return Node name.
 	 */
-	std::string getNodeName();
+	std::string getNodeName() const;
 
 	/*!
 	 * Reads the values of its properties from config node.
