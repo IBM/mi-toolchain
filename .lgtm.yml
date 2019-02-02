@@ -22,4 +22,4 @@ extraction:
 
     index:
         build_command:
-          - ./scripts/build.sh
+          - ./scripts/build_mic_module.sh

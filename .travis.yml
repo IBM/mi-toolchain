@@ -59,7 +59,7 @@ jobs:
         # Make mic dir.
         - mkdir mic
       script:
-        - ./scripts/build.sh
+        - ./scripts/build_mic_module.sh
       after_script:
         - ./scripts/unit_tests.sh
 
@@ -83,7 +83,7 @@ jobs:
       before_script:
         - mkdir mic
       script:
-        - ./scripts/build.sh
+        - ./scripts/build_mic_module.sh
 
 
     # 3. Ubuntu 14.04 clang++
@@ -100,7 +100,7 @@ jobs:
       before_script:
         - mkdir mic
       script:
-        - ./scripts/build.sh
+        - ./scripts/build_mic_module.sh
 
     # 4. OSX clang
     - os: osx
@@ -116,7 +116,7 @@ jobs:
       before_script:
         - mkdir mic
       script:
-        - ./scripts/build.sh
+        - ./scripts/build_mic_module.sh
 
     # 5. OSX gcc 4.9 (NOT WORKING: TRAVIS IS NOT CHANGING THE COMPILER)
     #- os: osx
@@ -135,7 +135,7 @@ jobs:
     #  before_script:
     #    - mkdir mic
     #  script:
-    #    - ./scripts/build.sh
+    #    - ./scripts/build_mic_module.sh
 
     # 5. Deploy
     - stage: "Deploy: GitHub Pages"

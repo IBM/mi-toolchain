@@ -40,7 +40,7 @@ PropertyTree::~PropertyTree() {
 	// TODO Auto-generated destructor stub
 }
 
-std::string PropertyTree::getNodeName() {
+std::string PropertyTree::getNodeName() const {
 	return node_name;
 }
 

@@ -11,48 +11,57 @@
 
 A subproject of Machine Intelligence Core, being the real "core" of the framework.
 
-Contains tools required for development of MIC-based applications, such as configuration management, loggers, application state etc.
+Contains tools required for development of MIC-based applications, such as configuration management, properties, loggers, application state, event handlers etc.
 
-## MIC dependencies
-
-   * none
-
-## External dependencies
-
-Toolchain depends on the following external libraries:
-   * Boost - a library of free (open source) peer-reviewed portable C++ source libraries.
-
-### Installation of the dependencies/required tools
-
-On Linux (Ubuntu 14.04): 
-
-    sudo apt-get install git cmake doxygen libboost1.54-all-dev
-
-## Main modules
+### Main modules
 
    * application - classes related for management of applications, their state, key-handlers as well application factories. 
    * configuration - classes responsible for configuration management (parameters server, property tree etc.) 
    * logger - classes and functions related to logger 
 
-## Applications
+### Applications
 
    * logger_test - application for testing console logger.
 
-## Installation
+## External dependencies
 
-In order to download, configure, make and install new "clean" version of mi-toolchain please execute the following:
+Additionally it depends on the following external libraries:
+   * Boost - library of free (open source) peer-reviewed portable C++ source libraries.
+   * Doxygen (optional) - Tool for generation of documentation.
+   * GTest (optional) - Framework for unit testing.
 
-    cd ~/workspace
-    git clone git@github.com:ibm/mi-toolchain.git
+### Installation of the dependencies/required tools
+
+#### On Linux (Ubuntu 14.04):
+
+    sudo apt-get install git cmake doxygen libboost1.54-all-dev
+
+To install GTest on Ubuntu:
+
+    sudo apt-get install libgtest-dev
+
+#### On Mac (OS X 10.14): (last tested on: Feb/01/2019)
+
+    brew install git cmake doxygen boost
+
+To install GTest on Mac OS X:
+
+    brew install --HEAD https://gist.githubusercontent.com/Kronuz/96ac10fbd8472eb1e7566d740c4034f8/raw/gtest.rb
+
+### Installation of MI-toolchain
+The following assumes that all MIC modules will be installed to the directory '../mic'.
+
+    git clone git@github.com:IBM/mi-toolchain.git
     cd mi-toolchain
-    mkdir build
-    cd build
-    cmake .. -DCMAKE_INSTALL_PREFIX=~/workspace/mic/
-    make -j4 install
+    ./scripts/build_mic_module.sh ../mic
+
+### Make commands
+
+   * make install - install applications to ../mic/bin, headers to ../mic/include, libraries to ../mic/lib, cmake files to ../mic/share
 
 ## Documentation
 
-In order to generate a "living" documentation of the code please run Doxygen:
+In order to locally generate a "living" documentation of the code please run Doxygen:
 
     cd ~/workspace/mi-toolchain
     doxygen mi-toolchain.doxyfile
@@ -62,8 +71,9 @@ The current documentation (generated straight from the code and automatically up
 
 https://ibm.github.io/mi-toolchain/
 
+
 ## Maintainer
 
-Tomasz Kornuta (tkornut@us.ibm.com)
+[tkornuta](github.com/tkornut)
 
-
+[![HitCount](http://hits.dwyl.io/tkornut/ibm/mi-toochain.svg)](http://hits.dwyl.io/tkornut/ibm/mi-toochain)

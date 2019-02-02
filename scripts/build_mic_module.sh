@@ -14,19 +14,34 @@
 # limitations under the License.
 
 # Assumes that:
-# - ROOT_DIR is the root of the project. 
-# - ROOT_DIR/mic/ exists.
-# - script is executed in ROOT_DIR (starts and ends in that dir).
+# - script is executed in ROOT_DIR (directory containing CMakeList).
+# - starts and ends in ROOT_DIR
+# TARGET_DIR (directory where files will be installed) is passed as first argument.
 
 # Stop the script on first error.
 set -e
 
-# Configure cmake and prepare installation dir.
+# Script configures cmake and installs the module to dir passed as first argument.
+# Out-of-source build.
+
+# Read input arguments.
+if [ $# -eq 0 ]; then
+    TARGET_DIR="mic"
+else
+    TARGET_DIR=$1
+fi
+echo "Installing module to ${TARGET_DIR}"
+
+# Prepare installation dir.
+rm -Rf build # Always fresh-and-clean!
 mkdir build
 cd build
+
 # Overwrite compiler!
 if [[ "${COMPILER}" != "" ]]; then export CXX=${COMPILER}; fi
-cmake .. -DCMAKE_INSTALL_PREFIX=../mic/
+
+# Configure cmake.
+cmake .. -DCMAKE_INSTALL_PREFIX=../${TARGET_DIR}
 # Build and install.
-make install VERBOSE=1
+make -j4 install VERBOSE=1
 cd ..
