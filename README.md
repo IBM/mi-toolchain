@@ -71,12 +71,9 @@ The current documentation (generated straight from the code and automatically up
 
 https://ibm.github.io/mi-toolchain/
 
-Maintainer
-----------
-[tkornuta][github.com/tkornut]
 
 ## Maintainer
 
-Tomasz Kornuta (tkornut@us.ibm.com)
+[tkornuta](github.com/tkornut)
 
 [![HitCount](http://hits.dwyl.io/tkornut/ibm/mi-toochain.svg)](http://hits.dwyl.io/tkornut/ibm/mi-toochain)
