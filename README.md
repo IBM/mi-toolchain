@@ -63,7 +63,7 @@ The following assumes that all MIC modules will be installed to the directory '.
 
 In order to locally generate a "living" documentation of the code please run Doxygen:
 
-    cd ~/workspace/mi-toolchain
+    cd mi-toolchain
     doxygen mi-toolchain.doxyfile
     firefox html/index.html
 
