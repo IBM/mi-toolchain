@@ -1,0 +1,7 @@
+<map id="mic::application::ContinuousLearningApplication::run" name="mic::application::ContinuousLearningApplication::run">
+<area shape="rect" id="node2" href="$a00005.html#a4cb8654b1ab1e81cfdd4b311c3fe43af" title="Performs single step of computations &#45; switches between learning and testing depending on the iterati..." alt="" coords="240,38,491,79"/>
+<area shape="rect" id="node3" href="$a00005.html#aba701987f1829202c900b70db33f343f" title="mic::application::Continuous\lLearningApplication::performLearningStep" alt="" coords="539,5,802,46"/>
+<area shape="rect" id="node4" href="$a00005.html#ab426001502bceaedf8cd2e307806cb68" title="mic::application::Continuous\lLearningApplication::performTestingStep" alt="" coords="542,70,799,111"/>
+<area shape="rect" id="node5" href="$a00005.html#afd41e19f1e916a713874c5cccc58ca9d" title="mic::application::Continuous\lLearningApplication::collectTest\lStatistics" alt="" coords="857,23,1063,79"/>
+<area shape="rect" id="node6" href="$a00005.html#a31191c50d8b110b141c0f6ed6f345830" title="mic::application::Continuous\lLearningApplication::populateTest\lStatistics" alt="" coords="851,103,1069,159"/>
+</map>

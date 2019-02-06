@@ -1,0 +1,8 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$a00015.html" title="Parent class for all classes possessing properties. Contains methods useful for their management..." alt="" coords="5,99,131,141"/>
+<area shape="rect" id="node2" href="$a00001.html" title="Base class for all applications. " alt="" coords="179,77,365,104"/>
+<area shape="rect" id="node6" href="$a00003.html" title="Class storing the state of the application (modes, sleep interval etc.). Defined in the form of a sin..." alt="" coords="179,129,365,170"/>
+<area shape="rect" id="node3" href="$a00005.html" title="Parent class for all applications basing on continuous learning. By default all computations are made..." alt="" coords="413,5,600,46"/>
+<area shape="rect" id="node4" href="$a00006.html" title="Parent class for all applications basing on episodes. Each episode consists of two phases: a training..." alt="" coords="421,70,592,111"/>
+<area shape="rect" id="node5" href="$a00018.html" title="Parent class for all applications consisting of two phases: a training phase (first), and testing phase (second). Each phase will end when then an adequate method (performLearning/TrainingStep) will return false. By default all computations are made within a single thread. " alt="" coords="417,135,596,177"/>
+</map>

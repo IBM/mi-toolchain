@@ -1,0 +1,11 @@
+<map id="src/application/KeyHandlerRegistry.cpp" name="src/application/KeyHandlerRegistry.cpp">
+<area shape="rect" id="node2" href="$a00031.html" title="Contains declaration of the abstract KeyHandlerRegistry class responsible for handling the keypressed..." alt="" coords="1255,96,1485,123"/>
+<area shape="rect" id="node6" href="$a00025.html" title="ApplicationState declaration. " alt="" coords="693,171,901,197"/>
+<area shape="rect" id="node19" href="$a00041.html" title="Contains definitions of main logger&#45;related macros. " alt="" coords="461,171,568,197"/>
+<area shape="rect" id="node9" href="$a00039.html" title="Contains declaration of the PropertyTree class. " alt="" coords="748,245,947,272"/>
+<area shape="rect" id="node10" href="$a00036.html" title="Contains declaration of the Property class. " alt="" coords="945,328,1119,355"/>
+<area shape="rect" id="node20" href="$a00047.html" title="Contains definition of ScopeLogger class. " alt="" coords="351,245,513,272"/>
+<area shape="rect" id="node21" href="$a00043.html" title="Contains declaration of a logger, a singleton responsible for logging and displaying all kinds of mes..." alt="" coords="349,328,475,355"/>
+<area shape="rect" id="node23" href="$a00046.html" title="Contains definition of an abstract logger output class, from which all output classes should be derri..." alt="" coords="5,419,168,445"/>
+<area shape="rect" id="node24" href="$a00045.html" title="Contains declarations of logger auxiliary functions, macros and severity type. " alt="" coords="402,501,549,528"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="mic::logger::ConsoleOutput::print" name="mic::logger::ConsoleOutput::print">
+<area shape="rect" id="node2" href="$a00052.html#a9941f949a1f3e02b68f30d1305072010" title="mic::logger::cyan" alt="" coords="243,5,365,32"/>
+<area shape="rect" id="node3" href="$a00052.html#ac148cf45ecd2273da70ef5ffbec7cff7" title="mic::logger::green" alt="" coords="241,56,367,83"/>
+<area shape="rect" id="node4" href="$a00052.html#a9d74a7508c8054d080451ac6c98d351f" title="mic::logger::intense" alt="" coords="236,107,372,133"/>
+<area shape="rect" id="node5" href="$a00052.html#a0191e947442dc4d72f810c65e559df01" title="mic::logger::red" alt="" coords="248,157,360,184"/>
+<area shape="rect" id="node6" href="$a00052.html#ab6b9b9999742e24c58288238c39ceff1" title="mic::logger::reset" alt="" coords="243,208,365,235"/>
+<area shape="rect" id="node7" href="$a00052.html#a4a6333b1d87d2fcd360fccb61eff746a" title="mic::logger::sev2str" alt="" coords="235,259,373,285"/>
+<area shape="rect" id="node8" href="$a00052.html#a4d3b64c70a4bb9f085e23adffc6a5f2f" title="mic::logger::yellow" alt="" coords="239,309,369,336"/>
+</map>

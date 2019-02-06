@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$a00007.html" title="Abstract class constituting interface for application factories. " alt="" coords="5,38,171,79"/>
+<area shape="rect" id="node2" href="$a00002.html" title="Application factory, class responsible for generation of an application object. Defined in the form o..." alt="" coords="219,5,405,46"/>
+<area shape="rect" id="node3" href="$a00017.html" title="Template class used for generation of concrete object factories. This enables that each application h..." alt="" coords="225,70,399,111"/>
+</map>

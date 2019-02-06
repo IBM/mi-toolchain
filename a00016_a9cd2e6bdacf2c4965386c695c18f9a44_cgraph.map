@@ -1,0 +1,5 @@
+<map id="mic::logger::ScopeLogger::~ScopeLogger" name="mic::logger::ScopeLogger::~ScopeLogger">
+<area shape="rect" id="node2" href="$a00010.html#a0a25589c0cf93ca5ad7777cd046e2397" title="mic::logger::Logger::log" alt="" coords="225,45,383,72"/>
+<area shape="rect" id="node3" href="$a00011.html#aea0e692a960b8e80927a3f817fec6b1d" title="mic::logger::LoggerOutput\l::getLvl" alt="" coords="433,5,605,46"/>
+<area shape="rect" id="node4" href="$a00011.html#a03d78a6a2e5ad982a0e534ebf2438473" title="Logs given message. Depending on actual implementation, it can be printed on terminal, ncurses window, file etc. " alt="" coords="433,70,605,111"/>
+</map>

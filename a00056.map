@@ -1,0 +1,10 @@
+<map id="src/application/Application.hpp" name="src/application/Application.hpp">
+<area shape="rect" id="node2" href="$a00020.html" title="Contains definition of methods of the base Application class. " alt="" coords="5,88,203,115"/>
+<area shape="rect" id="node3" href="$a00024.html" title="ApplicationState definition. " alt="" coords="227,81,401,122"/>
+<area shape="rect" id="node4" href="$a00027.html" title="Contains declaration of a base class for all continuous learning type applications. " alt="" coords="427,81,603,122"/>
+<area shape="rect" id="node6" href="$a00029.html" title="Contains declaration of a base class for all episodic learning type applications. ..." alt="" coords="627,81,816,122"/>
+<area shape="rect" id="node8" href="$a00033.html" title="Contains declaration of a base class for all train&#45;then&#45;test type applications. " alt="" coords="840,81,1008,122"/>
+<area shape="rect" id="node5" href="$a00026.html" title="Contains definition of methods of continuous learning base application type. " alt="" coords="427,171,603,213"/>
+<area shape="rect" id="node7" href="$a00028.html" title="Contains definition of methods of episodic learning application base class. " alt="" coords="627,171,816,213"/>
+<area shape="rect" id="node9" href="$a00032.html" title="Contains definition of methods of train&#45;then&#45;test base application class. " alt="" coords="840,171,1008,213"/>
+</map>

@@ -1,0 +1,22 @@
+<map id="src/logger/LoggerOutput.hpp" name="src/logger/LoggerOutput.hpp">
+<area shape="rect" id="node2" href="$a00040.html" title="Contains definition of a logger output class responsible for writing (colour) logs onto the console o..." alt="" coords="253,229,448,256"/>
+<area shape="rect" id="node4" href="$a00043.html" title="Contains declaration of a logger, a singleton responsible for logging and displaying all kinds of mes..." alt="" coords="365,80,512,107"/>
+<area shape="rect" id="node3" href="$a00048.html" title="Program for testing logger (with console output). " alt="" coords="277,312,435,339"/>
+<area shape="rect" id="node5" href="$a00042.html" title="Contains definition of logger methods. " alt="" coords="365,155,512,181"/>
+<area shape="rect" id="node6" href="$a00047.html" title="Contains definition of ScopeLogger class. " alt="" coords="536,155,720,181"/>
+<area shape="rect" id="node7" href="$a00041.html" title="Contains definitions of main logger&#45;related macros. " alt="" coords="561,229,689,256"/>
+<area shape="rect" id="node8" href="$a00021.html" title="Contains declaration of a base class for all applications. " alt="" coords="514,312,712,339"/>
+<area shape="rect" id="node10" href="$a00024.html" title="ApplicationState definition. " alt="" coords="5,395,179,437"/>
+<area shape="rect" id="node17" href="$a00031.html" title="Contains declaration of the abstract KeyHandlerRegistry class responsible for handling the keypressed..." alt="" coords="836,305,1015,346"/>
+<area shape="rect" id="node19" href="$a00035.html" title="Contains declaration of parameter server singleton along with some auxiliary typedefs. " alt="" coords="1235,305,1417,346"/>
+<area shape="rect" id="node9" href="$a00020.html" title="Contains definition of methods of the base Application class. " alt="" coords="203,403,401,429"/>
+<area shape="rect" id="node11" href="$a00027.html" title="Contains declaration of a base class for all continuous learning type applications. " alt="" coords="427,395,603,437"/>
+<area shape="rect" id="node13" href="$a00029.html" title="Contains declaration of a base class for all episodic learning type applications. ..." alt="" coords="627,395,816,437"/>
+<area shape="rect" id="node15" href="$a00033.html" title="Contains declaration of a base class for all train&#45;then&#45;test type applications. " alt="" coords="840,395,1008,437"/>
+<area shape="rect" id="node12" href="$a00026.html" title="Contains definition of methods of continuous learning base application type. " alt="" coords="427,486,603,527"/>
+<area shape="rect" id="node14" href="$a00028.html" title="Contains definition of methods of episodic learning application base class. " alt="" coords="627,486,816,527"/>
+<area shape="rect" id="node16" href="$a00032.html" title="Contains definition of methods of train&#45;then&#45;test base application class. " alt="" coords="840,486,1008,527"/>
+<area shape="rect" id="node18" href="$a00030.html" title="Definition of methods of abstract KeyHandlerRegistry class responsible for handling the keypressed ca..." alt="" coords="1032,395,1211,437"/>
+<area shape="rect" id="node20" href="$a00034.html" title="Contains declaration of parameter server class methods. " alt="" coords="1235,395,1417,437"/>
+<area shape="rect" id="node21" href="$a00038.html" title="Contains definition of methods of the PropertyTree class. " alt="" coords="1443,395,1613,437"/>
+</map>

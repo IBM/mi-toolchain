@@ -1,0 +1,5 @@
+<map id="src/logger/Logger.cpp" name="src/logger/Logger.cpp">
+<area shape="rect" id="node2" href="$a00043.html" title="Contains declaration of a logger, a singleton responsible for logging and displaying all kinds of mes..." alt="" coords="255,80,380,107"/>
+<area shape="rect" id="node6" href="$a00046.html" title="Contains definition of an abstract logger output class, from which all output classes should be derri..." alt="" coords="494,163,657,189"/>
+<area shape="rect" id="node7" href="$a00045.html" title="Contains declarations of logger auxiliary functions, macros and severity type. " alt="" coords="502,245,649,272"/>
+</map>

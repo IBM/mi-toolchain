@@ -1,0 +1,8 @@
+<map id="src/test/logger_test.cpp" name="src/test/logger_test.cpp">
+<area shape="rect" id="node2" href="$a00041.html" title="Contains definitions of main logger&#45;related macros. " alt="" coords="407,80,513,107"/>
+<area shape="rect" id="node11" href="$a00040.html" title="Contains definition of a logger output class responsible for writing (colour) logs onto the console o..." alt="" coords="643,229,816,256"/>
+<area shape="rect" id="node3" href="$a00047.html" title="Contains definition of ScopeLogger class. " alt="" coords="365,155,528,181"/>
+<area shape="rect" id="node4" href="$a00043.html" title="Contains declaration of a logger, a singleton responsible for logging and displaying all kinds of mes..." alt="" coords="340,229,465,256"/>
+<area shape="rect" id="node8" href="$a00046.html" title="Contains definition of an abstract logger output class, from which all output classes should be derri..." alt="" coords="494,312,657,339"/>
+<area shape="rect" id="node9" href="$a00045.html" title="Contains declarations of logger auxiliary functions, macros and severity type. " alt="" coords="506,395,653,421"/>
+</map>

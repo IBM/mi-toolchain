@@ -1,0 +1,10 @@
+<map id="src/application/KeyHandlerRegistry.hpp" name="src/application/KeyHandlerRegistry.hpp">
+<area shape="rect" id="node5" href="$a00025.html" title="ApplicationState declaration. " alt="" coords="693,96,901,123"/>
+<area shape="rect" id="node18" href="$a00041.html" title="Contains definitions of main logger&#45;related macros. " alt="" coords="461,96,568,123"/>
+<area shape="rect" id="node8" href="$a00039.html" title="Contains declaration of the PropertyTree class. " alt="" coords="748,171,947,197"/>
+<area shape="rect" id="node9" href="$a00036.html" title="Contains declaration of the Property class. " alt="" coords="945,253,1119,280"/>
+<area shape="rect" id="node19" href="$a00047.html" title="Contains definition of ScopeLogger class. " alt="" coords="351,171,513,197"/>
+<area shape="rect" id="node20" href="$a00043.html" title="Contains declaration of a logger, a singleton responsible for logging and displaying all kinds of mes..." alt="" coords="349,253,475,280"/>
+<area shape="rect" id="node22" href="$a00046.html" title="Contains definition of an abstract logger output class, from which all output classes should be derri..." alt="" coords="5,344,168,371"/>
+<area shape="rect" id="node23" href="$a00045.html" title="Contains declarations of logger auxiliary functions, macros and severity type. " alt="" coords="402,427,549,453"/>
+</map>

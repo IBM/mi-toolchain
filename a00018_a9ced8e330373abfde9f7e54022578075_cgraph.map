@@ -1,0 +1,5 @@
+<map id="mic::application::TrainThenTestApplication::run" name="mic::application::TrainThenTestApplication::run">
+<area shape="rect" id="node2" href="$a00018.html#a1c63ab1b54597712b78e06c117293601" title="mic::application::TrainThen\lTestApplication::performSingleStep" alt="" coords="232,38,459,79"/>
+<area shape="rect" id="node3" href="$a00018.html#a71e73ea47a398ccabf2b55e48f30eb50" title="mic::application::TrainThen\lTestApplication::performLearningStep" alt="" coords="507,5,747,46"/>
+<area shape="rect" id="node4" href="$a00018.html#aef87872429d8f66abc8c1779a4a71334" title="mic::application::TrainThen\lTestApplication::performTestingStep" alt="" coords="509,70,744,111"/>
+</map>

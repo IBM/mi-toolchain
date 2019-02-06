@@ -1,0 +1,6 @@
+<map id="src/logger/Log.hpp" name="src/logger/Log.hpp">
+<area shape="rect" id="node2" href="$a00047.html" title="Contains definition of ScopeLogger class. " alt="" coords="236,80,399,107"/>
+<area shape="rect" id="node3" href="$a00043.html" title="Contains declaration of a logger, a singleton responsible for logging and displaying all kinds of mes..." alt="" coords="255,155,380,181"/>
+<area shape="rect" id="node7" href="$a00046.html" title="Contains definition of an abstract logger output class, from which all output classes should be derri..." alt="" coords="494,237,657,264"/>
+<area shape="rect" id="node8" href="$a00045.html" title="Contains declarations of logger auxiliary functions, macros and severity type. " alt="" coords="502,320,649,347"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="mic::application::FactoryInterface" name="mic::application::FactoryInterface">
+<area shape="rect" id="node2" href="$a00002.html" title="Application factory, class responsible for generation of an application object. Defined in the form o..." alt="" coords="5,97,189,138"/>
+<area shape="rect" id="node3" href="$a00017.html" title="Template class used for generation of concrete object factories. This enables that each application h..." alt="" coords="214,97,388,138"/>
+</map>
