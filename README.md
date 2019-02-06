@@ -48,7 +48,7 @@ To install GTest on Mac OS X:
 
     brew install --HEAD https://gist.githubusercontent.com/Kronuz/96ac10fbd8472eb1e7566d740c4034f8/raw/gtest.rb
 
-### Installation of MI-toolchain
+## Installation of MI-Toolchain
 The following assumes that all MIC modules will be installed to the directory '../mic'.
 
     git clone git@github.com:IBM/mi-toolchain.git
